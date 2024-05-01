@@ -24,7 +24,7 @@ CREATE TABLE country_indicators (
 
 CREATE TABLE pirate_attacks (
 	date date,
-	time timestamp,
+	time varchar(10),
 	longitude real,
 	latitude real,
 	attack_type varchar(25),
