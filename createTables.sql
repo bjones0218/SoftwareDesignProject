@@ -1,5 +1,5 @@
 DROP TABLE IF EXISTS country_codes;
-DROP TABLE IF EXISTS country_information;
+DROP TABLE IF EXISTS country_indicators;
 DROP TABLE IF EXISTS pirate_attacks;
 
 CREATE TABLE country_codes (
@@ -10,7 +10,7 @@ CREATE TABLE country_codes (
 
 CREATE TABLE country_indicators (
 	country varchar(3),
-	current_year year,
+	current_year int,
 	corruption_index real,
 	homicide_rate real,
 	gdp real,
@@ -41,6 +41,6 @@ CREATE TABLE pirate_attacks (
 	data_source varchar(50)
 );
 
-\copy country_codes from country_codes.csv delimiter ',' csv
-\copy country country_indicators from country_indicators.csv delimiter ',' csv
-\copy pirate_attacks from pirate_attacks.csv delimiter ',' csv
+\copy country_codes from pirate_attacks/country_codes.csv delimiter ',' csv
+\copy country country_indicators from pirate_attacks/country_indicators.csv delimiter ',' csv
+\copy pirate_attacks from pirate_attacks/pirate_attacks.csv delimiter ',' csv
