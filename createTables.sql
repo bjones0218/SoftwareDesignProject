@@ -28,7 +28,7 @@ CREATE TABLE pirate_attacks (
 	longitude real,
 	latitude real,
 	attack_type varchar(25),
-	location_description varchar(100),
+	location_description varchar(300),
 	nearest_country varchar(3),
 	eez_country varchar(3),
 	shore_distance real,
