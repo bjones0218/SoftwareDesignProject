@@ -1,1 +1,2 @@
-# Software Design Project
+# Pirates of the Cannonean
+Website displaying pirate attacks
