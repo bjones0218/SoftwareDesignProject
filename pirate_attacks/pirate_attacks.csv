@@ -1,4 +1,3 @@
-date,time,longitude,latitude,attack_type,location_description,nearest_country,eez_country,shore_distance,shore_longitude,shore_latitude,attack_description,vessel_name,vessel_type,vessel_status,data_source
 1993-01-02,"NA",116.9667,19.7,"NA",Hong Kong - Luzon - Hainan,CHN,TWN,357.50237257241855,115.82595611500005,22.746643521000067,"NA",Mv Cosmic Leader,"NA","NA",mappingpiracy
 1993-01-04,"NA",116,22.35,"NA",Hong Kong - Luzon - Hainan,CHN,CHN,47.43157252093151,115.82595611500005,22.746643521000067,"NA",Mv Tricolor Star III,"NA","NA",mappingpiracy
 1993-01-06,"NA",115.25,19.67,"NA",Hong Kong - Luzon - Hainan,CHN,TWN,280.81187093993,114.30250084700003,22.044867255000042,"NA",Mv Arktis Star,"NA","NA",mappingpiracy
