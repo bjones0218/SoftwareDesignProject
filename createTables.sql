@@ -35,7 +35,7 @@ CREATE TABLE pirate_attacks (
 	shore_longitude real,
 	shore_latitude real,
 	attack_description varchar(100),
-	vessel_name varchar(50),
+	vessel_name varchar(75),
 	vessel_type varchar(50),
 	vessel_status varchar(50),
 	data_source varchar(50)
