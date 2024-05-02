@@ -71,3 +71,7 @@ def test_query_pirate_attacks():
     
     
     return None
+
+
+
+test_query_pirate_attacks()
