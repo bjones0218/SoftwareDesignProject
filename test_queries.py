@@ -13,7 +13,8 @@ def test_query():
         print("Connection failed")
     cursor = connection.cursor()
     # print the names of all of the countries in Latin America and the Caribbean
-    cursor.execute("SELECT * FROM country_codes WHERE region LIKE 'Latin America and Caribbean'")
+    print("Getting all of the country names in Latin America and the Caribean")
+    cursor.execute("SELECT * FROM country_codes WHERE region LIKE 'Latin America & Caribbean'")
     rows = cursor.fetchall()
     for row in rows:
         if row is not None:
