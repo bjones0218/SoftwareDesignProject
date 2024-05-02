@@ -20,5 +20,5 @@ def test_query():
         if row is not None:
             print(row[2])
 
-if __name__ == "main":
+if __name__ == '__main__':
     test_query()
