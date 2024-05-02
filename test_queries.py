@@ -12,3 +12,9 @@ def test_query(sql):
     if connection is None:
         print("Connection failed")
     cursor = connection.cursor()
+    # print the names of all of the countries in Latin America and the Caribbean
+    cursor.execute("SELECT * FROM country_codes WHERE region LIKE 'Latin America and Caribbean'")
+    rows = cursor.fetchall()
+    for row in rows:
+        if row is not None:
+            print(row[2])
