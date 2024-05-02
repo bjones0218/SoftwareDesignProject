@@ -42,5 +42,5 @@ CREATE TABLE pirate_attacks (
 );
 
 \copy country_codes from pirate_attacks/country_codes.csv delimiter ',' csv
-\copy country country_indicators from pirate_attacks/country_indicators.csv delimiter ',' csv
+\copy country_indicators from pirate_attacks/country_indicators.csv delimiter ',' csv
 \copy pirate_attacks from pirate_attacks/pirate_attacks.csv delimiter ',' csv
