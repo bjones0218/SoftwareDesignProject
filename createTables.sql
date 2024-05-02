@@ -16,7 +16,7 @@ CREATE TABLE country_indicators (
 	gdp real,
 	fisheries_per_ton real,
 	total_military real,
-	population int,
+	population real,
 	unemployment_rate real,
 	total_gr real,
 	gdp_industry real
