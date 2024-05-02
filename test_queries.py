@@ -18,7 +18,7 @@ def test_query_pirate_attacks():
     sql_long_lat = "SELECT date FROM pirate_attacks WHERE longitude BETWEEN 110 AND 120 AND latitude BETWEEN 20 AND 25 ORDER BY date DESC LIMIT 1; "
     sql_country_shore = "SELECT nearest_country, eez_country FROM pirate_attacks WHERE shore_distance BETWEEN 279 AND 280 AND shore_longitude BETWEEN 55 AND 56 AND shore_latitude BETWEEN 17 AND 18"
     sql_name_source_status = "SELECT vessel_name, data_source FROM pirate_attacks WHERE vessel_status = 'Anchored' LIMIT 1; "
-    sql_vesseltype_attackdis_time = "SELECT vessel_type, time FROM pirate_attacks WHERE attack_description = 'Suspicious'"  
+    sql_vesseltype_attackdis_time = "SELECT vessel_type, time FROM pirate_attacks WHERE attack_description = 'Suspicious approach: This incident will not feature in the IMB statistics. 20.01.2015: 1710 LT: Posn: 04:05N - 003:50W, around 70nm SSE of Abidjan, Ivory Coast. During bunker operations, an offshore supply vessel noticed a skiff with eight persons on board approaching at high speed. The bunkering vessels raised the alarm, carried out an emergency disconnection and moved away at full speed. Seeing the vessels actions, the skiff aborted the approach. All crew safe.'"  
     
     cursor.execute( sql_attack_type )
     row = cursor.fetchone()
