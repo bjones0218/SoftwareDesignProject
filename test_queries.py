@@ -1,7 +1,7 @@
 import psycopg2
 
 
-def test_query(sql):
+def test_query():
     connection = psycopg2.connect(
         host = "localhost",
         port = 5432,
@@ -18,3 +18,6 @@ def test_query(sql):
     for row in rows:
         if row is not None:
             print(row[2])
+
+if __name__ == "main":
+    test_query()
