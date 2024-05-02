@@ -62,6 +62,7 @@ def test_query_pirate_attacks():
     rowlist = cursor.fetchall()
     if (rowlist != None):
         print("The answer should include Offshore Supply Ship, 17:10")
+        print(rowlist[0])
         for row in rowlist:
             print("vessel_type, sttack_discription, and time test succeed, vessel type and time:", row)
         print("")
