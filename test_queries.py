@@ -11,6 +11,14 @@ if connection is None:
     print("Connection failed")
 cursor = connection.cursor()
 
+def test_query():
+    # print the names of all of the countries in Latin America and the Caribbean
+    print("Getting all of the country names in Latin America and the Caribean")
+    cursor.execute("SELECT * FROM country_codes WHERE region LIKE 'Latin America & Caribbean'")
+    rows = cursor.fetchall()
+    for row in rows:
+        if row is not None:
+            print(row[2])
 
 def test_query_pirate_attacks():
 
@@ -70,6 +78,6 @@ def test_query_pirate_attacks():
     
     return None
 
-
-
-test_query_pirate_attacks()
+if __name__ == '__main__':
+    test_query()
+    test_query_pirate_attacks()
