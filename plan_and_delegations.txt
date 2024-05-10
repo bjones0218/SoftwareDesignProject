@@ -1,0 +1,14 @@
+We will have a main page that briefly explains what the website is about, and a button saying "explore".
+That takes you to a page with a prominent map. The map has a bunch of dots (possibly a heatmap later),
+corresponding to each pirate attack. If we decide to add extra display options later, they will be on
+a menu above the map, which switch views on the same map.
+
+TASKS:
+1. Creating the map. Using a Java Script library to display a map and be able to zoom and pan it.
+Blake, Leon
+2. Creating the UI for the home page and the map page. It must have a space where the map can be inserted.
+Cameron, Leon
+3. Adding dots to the map, making the dots clickable to display extra information, automatically adding the dots to the map using the database.
+Blake, Henry
+4. Reach task: create supplemental information like bar plots, country indicators, etc.
+Johnathan
