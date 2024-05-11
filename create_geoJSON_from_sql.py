@@ -47,10 +47,10 @@ for attack in all_attacks:
         properties["date"] = attack[0].isoformat()
     else:
         properties["date"] = attack[0]
-    if isinstance(attack[0], (datetime.time)):
-        properties["time"] = attack[0].isoformat()
+    if isinstance(attack[1], (datetime.time)):
+        properties["time"] = attack[1].isoformat()
     else:
-        properties["time"] = attack[0]
+        properties["time"] = attack[1]
     geoJSON_feature["properties"] = properties
     data["features"].append(geoJSON_feature)
 
