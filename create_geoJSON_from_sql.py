@@ -44,11 +44,11 @@ for attack in all_attacks:
     # dates and times might be in a non-serializable format, fix them
     # https://pynative.com/python-serialize-datetime-into-json/
     if isinstance(attack[0], (datetime.date, datetime.datetime)):
-        properties["date"] = attack[0].isoformat
+        properties["date"] = attack[0].isoformat()
     else:
         properties["date"] = attack[0]
     if isinstance(attack[0], (datetime.time)):
-        properties["time"] = attack[0].isoformat
+        properties["time"] = attack[0].isoformat()
     else:
         properties["time"] = attack[0]
     geoJSON_feature["properties"] = properties
