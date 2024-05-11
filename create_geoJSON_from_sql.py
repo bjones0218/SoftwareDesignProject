@@ -28,8 +28,20 @@ for attack in all_attacks:
     # creating a point with the appropriate latitude and longitude
     # https://en.wikipedia.org/wiki/GeoJSON
     geoJSON_feature = {"type": "Feature", "geometry": {"type": "Point", "coordinates": [longitude, latitude]}}
+    # dates and times might be in a non-serializable format, fix them
+    # https://pynative.com/python-serialize-datetime-into-json/
+    if isinstance(attack[0], (datetime.date, datetime.datetime)):
+        date = attack[0].isoformat()
+    else:
+        date = attack[0]
+    if isinstance(attack[1], (datetime.time)):
+        time = attack[1].isoformat()
+    else:
+        time = attack[1]
     # copying all extra data into the properties of the point
-    properties = dict(attack_type = attack[4],
+    properties = dict(date = date,
+                      time = time,
+                      attack_type = attack[4],
                       location_description = attack[5],
                       nearest_country = attack[6],
                       eez_country = attack[7],
@@ -41,16 +53,6 @@ for attack in all_attacks:
                       vessel_type = attack[13],
                       vessel_status = attack[14],
                       data_source = attack[15])
-    # dates and times might be in a non-serializable format, fix them
-    # https://pynative.com/python-serialize-datetime-into-json/
-    if isinstance(attack[0], (datetime.date, datetime.datetime)):
-        properties["date"] = attack[0].isoformat()
-    else:
-        properties["date"] = attack[0]
-    if isinstance(attack[1], (datetime.time)):
-        properties["time"] = attack[1].isoformat()
-    else:
-        properties["time"] = attack[1]
     geoJSON_feature["properties"] = properties
     data["features"].append(geoJSON_feature)
 
