@@ -43,6 +43,7 @@ for attack in all_attacks:
                       vessel_status = attack[14],
                       data_source = attack[15])
     geoJSON_feature["properties"] = properties
+    data["features"].append(geoJSON_feature)
 
 print(data["features"][0])
 
