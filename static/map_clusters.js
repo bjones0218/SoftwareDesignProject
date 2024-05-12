@@ -5,7 +5,7 @@ const map = new maplibregl.Map({
 
     style: 'https://api.maptiler.com/maps/streets/style.json?key=D7IRYVVxzUM00mJgVi72',
 
-    center: [-103.59179687498357, 40.66995747013945],
+    center: [4.582651487193887, 52.50724258398793],
 
     zoom: 3
 
