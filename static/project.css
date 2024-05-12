@@ -27,12 +27,10 @@
 }
 
 .center-para{
-    font-size: large;
-    width: 150px;
-    height: 100px;
     text-align: center;
     margin-top: 20px;
   }
+<<<<<<< HEAD
 
 #bigButton {
     width: 10%;          /* Responsive width */
@@ -40,3 +38,5 @@
     font-size: 1.25rem;  /* Responsive font size */
     /* Other styles remain the same */
 }
+=======
+>>>>>>> 2b266696e0b21f562573dc44be52e777e92b8977
