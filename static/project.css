@@ -11,6 +11,14 @@
     margin-right: 20px; /* Optional: adds space between the logo and the links */
 }
 
+#headBar #logo img {
+    transition: opacity 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+#headBar #logo:hover img {
+    opacity: 0.8; /* Changes opacity on hover */
+}
+
 #headBar .nav-links {
     display: flex; /* Ensures links are also flex items */
 }
