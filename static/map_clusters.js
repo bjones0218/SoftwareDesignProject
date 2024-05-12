@@ -1,4 +1,8 @@
+container = document.getElementById("map");
+console.log(container);
 const map = new maplibregl.Map({
+
+    container: container,
 
     style: 'https://api.maptiler.com/maps/streets/style.json?key=D7IRYVVxzUM00mJgVi72',
 
@@ -8,7 +12,6 @@ const map = new maplibregl.Map({
 
 });
 
-document.getElementById("map").appendChild(map);
 
 map.on('load', () => {
 
