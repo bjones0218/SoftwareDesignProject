@@ -11,11 +11,6 @@
     margin-right: 20px; /* Optional: adds space between the logo and the links */
 }
 
-#headBar #logo:hover img {
-    transform: scale(1.05);  /* Slightly enlarges the logo on hover */
-    box-shadow: 0px 0px 8px rgba(0,0,0,0.6);  /* Adds shadow for depth */
-}
-
 #headBar .nav-links {
     display: flex; /* Ensures links are also flex items */
 }
@@ -31,12 +26,6 @@
     background-color: #555;
 }
 
-.center-para{
-    text-align: center;
-    margin-top: 200px;
-  }
-
-
 #bigButton {
     width: 30%;          /* Responsive width */
     padding: 1em;        /* Responsive padding */
@@ -47,4 +36,9 @@
 
 #bigButton:hover {
     background-color: #D3D3D3; /* Background color when hovered */
+}
+
+.clickedHeadbar {
+    background-color: black;
+    color: white;
 }
