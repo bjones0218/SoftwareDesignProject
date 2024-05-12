@@ -193,21 +193,20 @@ map.on('load', () => {
 
         const coordinates = e.features[0].geometry.coordinates.slice();
 
-        const mag = e.features[0].properties.mag;
+        let attack_description;
 
-        let tsunami;
-
-
-
-        if (e.features[0].properties.tsunami === 1) {
-
-            tsunami = 'yes';
-
-        } else {
-
-            tsunami = 'no';
-
+        if (e.features[0].properties.attack_description =="NA")
+        {
+            console.log("No desc");
+            attack_description = "No Description Provided";
         }
+        else
+        {
+            console.log("Decription present");
+            attack_description = e.features[0].properties.attack_description;	
+        }
+        
+
 
 
 
