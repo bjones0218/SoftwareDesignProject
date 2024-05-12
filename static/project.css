@@ -33,3 +33,10 @@
     text-align: center;
     margin-top: 20px;
   }
+
+#bigButton {
+    width: 10%;          /* Responsive width */
+    padding: 1em;        /* Responsive padding */
+    font-size: 1.25rem;  /* Responsive font size */
+    /* Other styles remain the same */
+}
