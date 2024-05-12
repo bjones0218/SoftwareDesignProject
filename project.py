@@ -10,6 +10,15 @@ def home():
 @app.route('/explore')
 def explore():
     return render_template("explore.html")
+
+@app.route('/aboutus')
+def aboutus():
+    return render_template("aboutus.html")
+
+@app.route('/details')
+def details():
+    return render_template("details.html")
+    
 if __name__ == '__main__':
     my_port = 5216
     app.run(host='0.0.0.0', port = my_port) 
