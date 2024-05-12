@@ -2,7 +2,7 @@
     display: flex;
     align-items: center; /* Centers items vertically within the bar */
     justify-content: space-between; /* Spreads items across the bar */
-    background-color: #D3D3D3;
+    background-color: #A9A9A9;
     padding: 10px 20px; /* Adds padding around the items */
 }
 
@@ -16,7 +16,7 @@
 }
 
 #headBar .nav-links a {
-    color: black;
+    color: white;
     text-decoration: none;
     padding: 10px 15px;
     font-size: 18px; /* Adjust font size as needed */
@@ -31,7 +31,7 @@
     margin-top: 20px;
   }
 
-  
+
 #bigButton {
     width: 10%;          /* Responsive width */
     padding: 1em;        /* Responsive padding */
