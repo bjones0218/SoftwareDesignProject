@@ -42,3 +42,8 @@
     background-color: black;
     color: white;
 }
+
+.center-para{
+    text-align: center;
+    margin-top: 20px;
+  }
