@@ -1,1 +1,17 @@
+#headBar {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+}
 
+#headBar a {
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+#headBar a:hover {
+    background-color: #555;
+}
