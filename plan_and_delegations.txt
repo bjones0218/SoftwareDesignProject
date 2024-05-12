@@ -16,3 +16,6 @@ Johnathan
 
 Links:
 https://maplibre.org/maplibre-gl-js/docs/examples/cluster/
+
+Maptiler API key:
+D7IRYVVxzUM00mJgVi72
