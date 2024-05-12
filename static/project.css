@@ -39,3 +39,7 @@
     border-radius: 15px;
     /* Other styles remain the same */
 }
+
+#bigButton:hover {
+    background-color: #0056b3; /* Background color when hovered */
+}
