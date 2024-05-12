@@ -14,8 +14,11 @@
 
     <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@4.2.0/dist/maplibre-gl.css' />
 
+    <link rel="stylesheet" href="/static/project.css">
+  
     <script src='https://unpkg.com/maplibre-gl@4.2.0/dist/maplibre-gl.js'></script>
 
+    <script src="/static/project.js"></script>
 
     <style>
 
@@ -24,12 +27,20 @@
         html, body, #map { height: 100%; }
 
     </style>
-
 </head>
-
 <body>
-	<div id="map"></div>
-    <script src="static/map_clusters.js"></script>
-</body>
+    <div id="headBar">
+        <a href="/" id="logoLink" aria-label="Go to Home">
+            <img src="/static/logo2.svg" alt="Logo" id="logo" style="height: 50px;">
+        </a>
+        <div class="nav-links">
+            <a href="#aboutus">About Us</a>
+            <a href="#details">Details</a>
+        </div>   
+    </div>
 
+    <div id="map"></div>
+    <script src="static/map_clusters.js"></script>
+
+</body>
 </html>

@@ -1,1 +1,53 @@
+#headBar {
+    display: flex;
+    align-items: center; /* Centers items vertically within the bar */
+    justify-content: space-between; /* Spreads items across the bar */
+    background-color: #A9A9A9;
+    padding: 10px 20px; /* Adds padding around the items */
+}
 
+#headBar #logo {
+    height: 50px; /* Adjust based on your logo's design */
+    margin-right: 20px; /* Optional: adds space between the logo and the links */
+}
+
+#headBar #logo img {
+    transition: opacity 0.3s ease; /* Smooth transition for the hover effect */
+}
+
+#headBar #logo:hover img {
+    opacity: 0.8; /* Changes opacity on hover */
+}
+
+#headBar .nav-links {
+    display: flex; /* Ensures links are also flex items */
+}
+
+#headBar .nav-links a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-size: 18px; /* Adjust font size as needed */
+}
+
+#headBar .nav-links a:hover {
+    background-color: #555;
+}
+
+.center-para{
+    text-align: center;
+    margin-top: 200px;
+  }
+
+
+#bigButton {
+    width: 30%;          /* Responsive width */
+    padding: 1em;        /* Responsive padding */
+    font-size: 1.25rem;  /* Responsive font size */
+    border-radius: 15px;
+    /* Other styles remain the same */
+}
+
+#bigButton:hover {
+    background-color: #D3D3D3; /* Background color when hovered */
+}

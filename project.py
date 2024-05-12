@@ -5,14 +5,20 @@ app = Flask(__name__)
 
 @app.route('/')
 def home():
-    message = "Welcome to the Home Webpage."
     return render_template("home.html")
     
 @app.route('/explore')
 def explore():
-    message = "This is the next page."
-    print(message)
     return render_template("explore.html")
+
+@app.route('/aboutus')
+def aboutus():
+    return render_template("aboutus.html")
+
+@app.route('/details')
+def details():
+    return render_template("details.html")
+    
 if __name__ == '__main__':
     my_port = 5216
     app.run(host='0.0.0.0', port = my_port) 
