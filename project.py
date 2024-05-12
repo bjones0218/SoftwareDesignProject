@@ -11,6 +11,7 @@ def home():
 @app.route('/explore')
 def explore():
     message = "This is the next page."
+    print(message)
     return render_template("explore.html")
 if __name__ == '__main__':
     my_port = 5216
