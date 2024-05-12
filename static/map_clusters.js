@@ -1,8 +1,8 @@
-container = document.getElementById("map");
-console.log(container);
+// container = explore.getElementById("map");
+// console.log(container);
 const map = new maplibregl.Map({
 
-    container: container,
+    container: 'map',
 
     style: 'https://api.maptiler.com/maps/streets/style.json?key=D7IRYVVxzUM00mJgVi72',
 
