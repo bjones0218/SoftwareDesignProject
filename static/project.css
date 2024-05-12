@@ -15,3 +15,8 @@
 #headBar a:hover {
     background-color: #555;
 }
+
+.center-para{
+    text-align: center;
+    margin-top: 20px;
+  }
