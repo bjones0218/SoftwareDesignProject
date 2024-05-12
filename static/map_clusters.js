@@ -1,5 +1,4 @@
-// container = explore.getElementById("map");
-// console.log(container);
+
 const map = new maplibregl.Map({
 
     container: 'map',
