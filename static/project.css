@@ -28,12 +28,12 @@
 
 .center-para{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 500px;
   }
 
   
 #bigButton {
-    width: 10%;          /* Responsive width */
+    width: 30%;          /* Responsive width */
     padding: 1em;        /* Responsive padding */
     font-size: 1.25rem;  /* Responsive font size */
     /* Other styles remain the same */
