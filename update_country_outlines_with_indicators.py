@@ -33,9 +33,7 @@ for feature in raw_data["features"]:
     country_indicators = cursor.fetchall()
     cursor.execute(f"SELECT nearest_country FROM pirate_attacks WHERE nearest_country LIKE '{iso_country_code}'")
     pirate_attacks = cursor.fetchall()
-    if (len(country_indicators) > 0 and len(pirate_attacks) > 0):
-        pass
-    else:
+    if (country_indicators is None or pirate_attacks is None or len(country_indicators) == 0 or len(pirate_attacks) == 0):
         print(f"Removing {feature['properties']['ADMIN']}")
         raw_data["features"].remove(feature)
     if (iso_country_code == "CHN"):
@@ -48,4 +46,8 @@ for feature in raw_data["features"]:
     print(feature["properties"]["ISO_A3"])
 
 cursor.execute("SELECT * FROM country_codes WHERE country LIKE '-99'")
+print(cursor.fetchone())
+cursor.execute("SELECT * FROM country_indicators WHERE country LIKE '-99'")
+print(cursor.fetchone())
+cursor.execute("SELECT * FROM pirate_attacks WHERE nearest_country LIKE '-99'")
 print(cursor.fetchone())
