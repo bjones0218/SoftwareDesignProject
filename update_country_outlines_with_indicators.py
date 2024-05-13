@@ -32,6 +32,6 @@ for feature in raw_data["features"]:
     cursor.execute(f"SELECT country, current_year, corruption_index, homicide_rate, gdp, fisheries_per_ton, total_military, population, unemployment_rate, total_gr, gdp_industry FROM country_indicators WHERE country LIKE '{iso_country_code}'")
     rows = cursor.fetchall()
     if (iso_country_code == "CHN"):
+        print(feature["properties"])
         for row in rows:
             print(row)
-            print(feature)
