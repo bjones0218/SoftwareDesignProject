@@ -34,7 +34,7 @@ for feature in raw_data["features"]:
     if (len(rows) > 0):
         pass
     else:
-        print(f"Removing {feature["ADMIN"]}")
+        print(f"Removing {feature['properties']['ADMIN']}")
         list().remove(feature)
     if (iso_country_code == "CHN"):
         print(feature["properties"])
