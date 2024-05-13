@@ -20,7 +20,7 @@ def details():
     return render_template("details.html")
 
 @app.route('/explorebyregion')
-def details():
+def explorebyregion():
     return render_template("explorebyregion.html")
     
 if __name__ == '__main__':
