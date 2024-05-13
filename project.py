@@ -18,6 +18,10 @@ def aboutus():
 @app.route('/details')
 def details():
     return render_template("details.html")
+
+@app.route('/explorebyregion')
+def details():
+    return render_template("explorebyregion.html")
     
 if __name__ == '__main__':
     my_port = 5216
