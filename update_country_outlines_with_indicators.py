@@ -34,3 +34,4 @@ for feature in raw_data["features"]:
     if (iso_country_code == "CHN"):
         for row in rows:
             print(row)
+            print(feature)
