@@ -29,7 +29,7 @@ with open("static/raw_countries.geojson", "r", encoding="utf-8") as raw_country_
 for feature in raw_data["features"]:
     iso_country_code = feature["properties"]["ISO_A3"]
     print(feature["properties"]["ISO_A3"])
-    cursor.execute(f"SELECT country, current_year, corruption_index, homicide_rate, gdp, fisheries_per_ton, total_military, population, unemployment_rate, total_gr, gdp_industry FROM country_indicators WHERE country LIKE {iso_country_code}")
+    cursor.execute(f"SELECT country, current_year, corruption_index, homicide_rate, gdp, fisheries_per_ton, total_military, population, unemployment_rate, total_gr, gdp_industry FROM country_indicators WHERE country LIKE '{iso_country_code}'")
     rows = cursor.fetchall()
     if (iso_country_code == "CHN"):
         for row in rows:
