@@ -31,11 +31,10 @@
     padding: 1em;        /* Responsive padding */
     font-size: 1.25rem;  /* Responsive font size */
     border-radius: 15px;
-    /* Other styles remain the same */
 }
 
 #bigButton:hover {
-    background-color: #D3D3D3; /* Background color when hovered */
+    background-color: #D3D3D3; 
 }
 
 .clickedHeadbar {
