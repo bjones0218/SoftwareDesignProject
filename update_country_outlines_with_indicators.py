@@ -30,15 +30,17 @@ for feature in raw_data["features"]:
     iso_country_code = feature["properties"]["ISO_A3"]
     # print(feature["properties"]["ISO_A3"])
     cursor.execute(f"SELECT country, current_year, corruption_index, homicide_rate, gdp, fisheries_per_ton, total_military, population, unemployment_rate, total_gr, gdp_industry FROM country_indicators WHERE country LIKE '{iso_country_code}'")
-    rows = cursor.fetchall()
-    if (len(rows) > 0):
+    country_indicators = cursor.fetchall()
+    cursor.execute(f"SELECT nearest_country FROM pirate_attacks WHERE nearest_country LIKE '{iso_country_code}'")
+    pirate_attacks = cursor.fetchall()
+    if (len(country_indicators) > 0 and len(pirate_attacks) > 0):
         pass
     else:
         print(f"Removing {feature['properties']['ADMIN']}")
         raw_data["features"].remove(feature)
     if (iso_country_code == "CHN"):
         print(feature["properties"])
-        for row in rows:
+        for row in country_indicators:
             print(row)
 
 for feature in raw_data["features"]:
