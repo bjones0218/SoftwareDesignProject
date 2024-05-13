@@ -12,6 +12,8 @@ Cameron, Leon
 Blake, Henry
 4. Reach task: create supplemental information like bar plots, country indicators, etc.
 Johnathan
+5. Adding country data to the map. Making it so that you can click the countries to display indicators about them.
+Henry
 
 
 Links:
