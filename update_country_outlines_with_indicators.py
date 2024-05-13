@@ -46,3 +46,6 @@ for feature in raw_data["features"]:
 for feature in raw_data["features"]:
     iso_country_code = feature["properties"]["ISO_A3"]
     print(feature["properties"]["ISO_A3"])
+
+cursor.execute("SELECT * FROM country_codes WHERE country LIKE '-99'")
+print(cursor.fetchone())
