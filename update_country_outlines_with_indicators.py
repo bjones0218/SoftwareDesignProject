@@ -27,4 +27,4 @@ with open("static/raw_countries.geojson", "r", encoding="utf-8") as raw_country_
         print("Failed to decode raw country geoJSON")
 
 for feature in raw_data["features"]:
-    print(feature["properties"])
+    print(feature["properties"]["ISO_A3"])
