@@ -51,7 +51,7 @@ while (i < len(raw_data["features"])):
                                    unemployment_rate = yearly_data[8],
                                    total_gr = yearly_data[9],
                                    gdp_industry = yearly_data[10])
-            country_indicators_time_series.push(year_indicators);
+            country_indicators_time_series.append(year_indicators);
         feature["properties"]["indicators"] = country_indicators_time_series
         # if iso_country_code == "CHN":
             # print(feature["properties"])
