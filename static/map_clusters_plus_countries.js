@@ -117,11 +117,11 @@ map.on('load', () => {
     // When a click event occurs on a feature in the states layer, open a popup at the
     // location of the click, with description HTML from its properties.
     map.on('click', 'countries', (e) => {
-        console.log("feature properties: "+e.features[0].properties.toString());
+        indicators = JSON.parse(e.features[0].properties.indicators);
         // time series starts at 1993, ends at 2019
         new maplibregl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML(e.features[0].properties.ADMIN + "'s 2016 GDP: " + e.features[0]["properties"]["indicators"][23].gdp)
+            .setHTML(e.features[0].properties.ADMIN + "'s 2016 GDP per capita: " + indicators[23].gdp)
             .addTo(map);
     });
 
