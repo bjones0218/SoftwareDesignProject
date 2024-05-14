@@ -32,7 +32,7 @@ while (i < len(raw_data["features"])):
     pirate_attacks_near_country = cursor.fetchall()
     # if we don't have data about the country, or no pirate attacks happened near it, remove it from the dataset
     if (iso_country_code == '-99' or len(country_indicators) == 0 or len(pirate_attacks_near_country) == 0):
-        print(f"Removing {feature['properties']['ADMIN']}")
+        # print(f"Removing {feature['properties']['ADMIN']}")
         raw_data["features"].pop(i)
     else:
         # yearly data is stored in, e.g., data["features"][17]["indicators"]["2001"]["gdp"]
@@ -52,11 +52,17 @@ while (i < len(raw_data["features"])):
                                    gdp_industry = yearly_data[10])
             country_indicators_time_series[current_year] = year_indicators
         feature["properties"]["indicators"] = country_indicators_time_series
-        if iso_country_code == "CHN":
-            print(feature["properties"])
+        # if iso_country_code == "CHN":
+            # print(feature["properties"])
         i += 1
 
 print("These are all of the countries in the refined database")
 for feature in raw_data["features"]:
     country_name = feature["properties"]["ADMIN"]
     print(country_name)
+
+# https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file
+with open("country_outlines_with_indicators.geojson", "w", encoding="utf-8") as output_file:
+    json.dump(raw_data, output_file, ensure_ascii=False)
+
+print("Dumped refined outline data, without countries that don't appear in pirate attack data, into new file country_outlines_with_indicators.geojson")
