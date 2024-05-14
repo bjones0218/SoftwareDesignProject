@@ -58,17 +58,5 @@ while (i < len(raw_data["features"])):
 
 print("These are all of the countries in the refined database")
 for feature in raw_data["features"]:
-<<<<<<< HEAD
-    iso_country_code = feature["properties"]["ISO_A3"]
-    print(feature["properties"]["ISO_A3"])
-
-cursor.execute("SELECT * FROM country_codes WHERE country LIKE '-99'")
-print(cursor.fetchone())
-cursor.execute("SELECT * FROM country_indicators WHERE country LIKE '-99'")
-print(cursor.fetchone())
-cursor.execute("SELECT * FROM pirate_attacks WHERE nearest_country LIKE '-99'")
-print(cursor.fetchone())
-=======
     country_name = feature["properties"]["ADMIN"]
     print(country_name)
->>>>>>> e152921c5188765dcd5a59f4f0263b5ecbce69a5
