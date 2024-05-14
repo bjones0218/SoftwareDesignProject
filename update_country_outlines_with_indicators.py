@@ -29,27 +29,34 @@ while (i < len(raw_data["features"])):
     cursor.execute(f"SELECT country, current_year, corruption_index, homicide_rate, gdp, fisheries_per_ton, total_military, population, unemployment_rate, total_gr, gdp_industry FROM country_indicators WHERE country LIKE '{iso_country_code}'")
     country_indicators = cursor.fetchall()
     cursor.execute(f"SELECT nearest_country FROM pirate_attacks WHERE nearest_country LIKE '{iso_country_code}'")
-    pirate_attacks = cursor.fetchall()
-    if (iso_country_code == '-99'):
-        print(pirate_attacks)
-    if (iso_country_code == '-99' or len(country_indicators) == 0 or len(pirate_attacks) == 0):
+    pirate_attacks_near_country = cursor.fetchall()
+    # if we don't have data about the country, or no pirate attacks happened near it, remove it from the dataset
+    if (iso_country_code == '-99' or len(country_indicators) == 0 or len(pirate_attacks_near_country) == 0):
         print(f"Removing {feature['properties']['ADMIN']}")
         raw_data["features"].pop(i)
-        i -= 1
     else:
-        if (iso_country_code == "CHN"):
-            print(feature["properties"])
-            for row in country_indicators:
-                print(row)
-    i += 1
+        # yearly data is stored in, e.g., data["features"][17]["indicators"]["2001"]["gdp"]
+        cursor.execute(f"SELECT region FROM country_codes WHERE country LIKE '{iso_country_code}'")
+        region = cursor.fetchone()
+        country_indicators_time_series = {}
+        for yearly_data in country_indicators:
+            current_year = yearly_data[1]
+            year_indicators = dict(corruption_index = yearly_data[2],
+                                   homicide_rate = yearly_data[3],
+                                   gdp = yearly_data[4],
+                                   fisheries_per_ton = yearly_data[5],
+                                   total_military = yearly_data[6],
+                                   population = yearly_data[7],
+                                   unemployment_rate = yearly_data[8],
+                                   total_gr = yearly_data[9],
+                                   gdp_industry = yearly_data[10])
+            country_indicators_time_series[current_year] = year_indicators
+        feature["indicators"] = country_indicators_time_series
+        if iso_country_code == "CHN":
+            print(feature)
+        i += 1
 
+print("These are all of the countries in the refined database")
 for feature in raw_data["features"]:
-    iso_country_code = feature["properties"]["ISO_A3"]
-    print(feature["properties"]["ISO_A3"])
-
-cursor.execute("SELECT * FROM country_codes WHERE country LIKE '-99'")
-print(cursor.fetchone())
-cursor.execute("SELECT * FROM country_indicators WHERE country LIKE '-99'")
-print(cursor.fetchone())
-cursor.execute("SELECT * FROM pirate_attacks WHERE nearest_country LIKE '-99'")
-print(cursor.fetchone())
+    country_name = feature["properties"]["ADMIN"]
+    print(country_name)
