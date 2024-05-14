@@ -53,7 +53,7 @@ while (i < len(raw_data["features"])):
             country_indicators_time_series[current_year] = year_indicators
         feature["indicators"] = country_indicators_time_series
         if iso_country_code == "CHN":
-            print(feature)
+            print(feature["properties"])
         i += 1
 
 print("These are all of the countries in the refined database")
