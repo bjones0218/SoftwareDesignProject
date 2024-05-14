@@ -59,7 +59,7 @@ map.on('load', () => {
                   'type': 'fill',
                   'source': 'countries',
                   'layout': {},
-                  'paint': {'fill-color': '#88', 'fill-opacity': 0.6}})
+                  'paint': {'fill-color': '#0CC', 'fill-opacity': 0.6}})
     
     // inspect a cluster on click
     map.on('click', 'clusters', async (e) => {
