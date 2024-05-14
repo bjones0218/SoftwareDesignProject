@@ -14,11 +14,6 @@ if connection is None:
     print("Connection failed")
 cursor = connection.cursor()
 
-data = {
-    "type": "FeatureCollection",
-    "features": []
-}
-
 # https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file
 with open("static/raw_countries.geojson", "r", encoding="utf-8") as raw_country_file:
     try:
@@ -26,7 +21,9 @@ with open("static/raw_countries.geojson", "r", encoding="utf-8") as raw_country_
     except JSONDecodeError:
         print("Failed to decode raw country geoJSON")
 
-for feature in raw_data["features"]:
+i = 0
+while (i < len(raw_data["features"])):
+    feature = raw_data[i]
     iso_country_code = feature["properties"]["ISO_A3"]
     # print(feature["properties"]["ISO_A3"])
     cursor.execute(f"SELECT country, current_year, corruption_index, homicide_rate, gdp, fisheries_per_ton, total_military, population, unemployment_rate, total_gr, gdp_industry FROM country_indicators WHERE country LIKE '{iso_country_code}'")
@@ -37,11 +34,14 @@ for feature in raw_data["features"]:
         print(pirate_attacks)
     if (iso_country_code == '-99' or len(country_indicators) == 0 or len(pirate_attacks) == 0):
         print(f"Removing {feature['properties']['ADMIN']}")
-        raw_data["features"].remove(feature)
-    if (iso_country_code == "CHN"):
-        print(feature["properties"])
-        for row in country_indicators:
-            print(row)
+        raw_data["features"].pop(i)
+        i -= 1
+    else:
+        if (iso_country_code == "CHN"):
+            print(feature["properties"])
+            for row in country_indicators:
+                print(row)
+    i += 1
 
 for feature in raw_data["features"]:
     iso_country_code = feature["properties"]["ISO_A3"]
