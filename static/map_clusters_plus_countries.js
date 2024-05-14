@@ -1,14 +1,9 @@
 
 const map = new maplibregl.Map({
-
     container: 'map',
-
     style: 'https://api.maptiler.com/maps/streets/style.json?key=D7IRYVVxzUM00mJgVi72',
-
     center: [4.582651487193887, 52.50724258398793],
-
     zoom: 3
-
 });
 
 
@@ -17,7 +12,7 @@ map.on('load', () => {
     // Add a new source from our GeoJSON data and
     // set the 'cluster' option to true. GL-JS will
     // add the point_count property to your source data.
-    console.log("map onload called");
+    console.log("Showing map of clusters and countries");
     map.addSource('pirate_attacks', {type: 'geojson',
                                      // Point to GeoJSON data
                                      data: 'static/pirate_attacks.geojson',
