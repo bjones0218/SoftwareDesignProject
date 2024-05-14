@@ -117,7 +117,7 @@ map.on('load', () => {
     // When a click event occurs on a feature in the states layer, open a popup at the
     // location of the click, with description HTML from its properties.
     map.on('click', 'countries', (e) => {
-        console.log("feature properties: "+e.features[0].properties);
+        console.log("feature properties: "+e.features[0].properties.toString());
         new maplibregl.Popup()
             .setLngLat(e.lngLat)
             .setHTML(e.features[0].properties.ADMIN + "'s 2016 GDP: " + e.features[0].properties.indicators.year_2016.gdp)
