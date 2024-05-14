@@ -55,11 +55,11 @@ map.on('load', () => {
     
     // country outlines
     // https://maplibre.org/maplibre-gl-js/docs/examples/geojson-polygon/
-    map.addLayer({'id': 'country_outlines',
+    map.addLayer({'id': 'countries',
                   'type': 'fill',
                   'source': 'countries',
                   'layout': {},
-                  'paint': {'fill-color': '#0CC', 'fill-opacity': 0.6}})
+                  'paint': {'fill-color': 'rgba(0, 0, 0, 1.0)', 'fill-opacity': 0.6}})
     
     // inspect a cluster on click
     map.on('click', 'clusters', async (e) => {
@@ -110,6 +110,26 @@ map.on('load', () => {
     });
 
     map.on('mouseleave', 'clusters', () => {
+        map.getCanvas().style.cursor = '';
+    });
+
+    // https://maplibre.org/maplibre-gl-js/docs/examples/polygon-popup-on-click/
+    // When a click event occurs on a feature in the states layer, open a popup at the
+    // location of the click, with description HTML from its properties.
+    map.on('click', 'countries', (e) => {
+        new maplibregl.Popup()
+            .setLngLat(e.lngLat)
+            .setHTML(e.features[0].properties.indicators)
+            .addTo(map);
+    });
+
+    // Change the cursor to a pointer when the mouse is over the states layer.
+    map.on('mouseenter', 'countries', () => {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    // Change it back to a pointer when it leaves.
+    map.on('mouseleave', 'countries', () => {
         map.getCanvas().style.cursor = '';
     });
 
