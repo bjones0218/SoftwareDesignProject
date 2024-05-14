@@ -62,7 +62,7 @@ for feature in raw_data["features"]:
     print(country_name)
 
 # https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file
-with open("country_outlines_with_indicators.geojson", "w", encoding="utf-8") as output_file:
+with open("static/country_outlines_with_indicators.geojson", "w", encoding="utf-8") as output_file:
     json.dump(raw_data, output_file, ensure_ascii=False)
 
 print("Dumped refined outline data, without countries that don't appear in pirate attack data, into new file country_outlines_with_indicators.geojson")
