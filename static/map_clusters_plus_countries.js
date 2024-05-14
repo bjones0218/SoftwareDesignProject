@@ -120,7 +120,7 @@ map.on('load', () => {
         console.log("feature properties: "+e.features[0].properties.toString());
         new maplibregl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML(e.features[0].properties.ADMIN + "'s 2016 GDP: " + e.features[0].properties.indicators)
+            .setHTML(e.features[0].properties.ADMIN + "'s 2016 GDP: " + e.features[0].properties.indicators.year_2016)
             .addTo(map);
     });
 
