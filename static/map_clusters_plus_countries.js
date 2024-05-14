@@ -59,7 +59,7 @@ map.on('load', () => {
                   'type': 'fill',
                   'source': 'countries',
                   'layout': {},
-                  'paint': {'fill-color': 'rgba(0, 0, 0, 1.0)', 'fill-opacity': 0.6}})
+                  'paint': {'fill-color': 'rgba(0, 0, 0, 0.0)', 'fill-opacity': 0.6}})
     
     // inspect a cluster on click
     map.on('click', 'clusters', async (e) => {
@@ -119,7 +119,7 @@ map.on('load', () => {
     map.on('click', 'countries', (e) => {
         new maplibregl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML(e.features[0].properties.indicators)
+            .setHTML(e.features[0].properties.ADMIN + "'s 2020 GDP: " + e.features[0].properties.indicators.year_2020.gdp)
             .addTo(map);
     });
 
