@@ -51,7 +51,7 @@ while (i < len(raw_data["features"])):
                                    total_gr = yearly_data[9],
                                    gdp_industry = yearly_data[10])
             country_indicators_time_series[current_year] = year_indicators
-        feature["indicators"] = country_indicators_time_series
+        feature["properties"]["indicators"] = country_indicators_time_series
         if iso_country_code == "CHN":
             print(feature["properties"])
         i += 1
