@@ -119,7 +119,7 @@ map.on('load', () => {
     map.on('click', 'countries', (e) => {
         new maplibregl.Popup()
             .setLngLat(e.lngLat)
-            .setHTML(e.features[0].properties.ADMIN + "'s 2020 GDP: " + e.features[0].properties.indicators.year_2020.gdp)
+            .setHTML(e.features[0].properties.ADMIN + "'s 2016 GDP: " + e.features[0].properties.indicators.year_2016.gdp)
             .addTo(map);
     });
 
