@@ -52,6 +52,9 @@ body {
 .center-para{
     text-align: center;
     margin-top: 20px;
+    font-size: 2em; /* Make text bigger */
+    line-height: 1.5em; /* Adjust line height for better spacing */
+    max-width: 400px;
 }
 
 .flex-container {
