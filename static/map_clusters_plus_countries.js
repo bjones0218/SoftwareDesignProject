@@ -120,7 +120,7 @@ map.on('load', () => {
     map.on('click', 'countries', (e) => {
         var indicators = JSON.parse(e.features[0].properties.indicators);
         const STARTING_YEAR = 1993;
-        var gdp2019 = indicators[2019 - STARTING_YEAR];
+        var gdp2019 = indicators[2019 - STARTING_YEAR].gdp;
         if (gdp2019 === undefined) {
             gdp2019 = "No data";
         }
