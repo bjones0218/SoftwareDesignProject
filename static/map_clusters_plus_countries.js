@@ -121,7 +121,7 @@ map.on('load', () => {
         var indicators = JSON.parse(e.features[0].properties.indicators);
         const STARTING_YEAR = 1993;
         var gdp2019 = indicators[2019 - STARTING_YEAR].gdp;
-        if (gdp2019 === undefined) {
+        if (gdp2019 === null || gdp2019 === undefined) {
             gdp2019 = "No data";
         }
         // time series starts at 1993, ends at 2019
