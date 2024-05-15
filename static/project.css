@@ -37,7 +37,7 @@ body {
     padding: 1em;        /* Responsive padding */
     font-size: 1.25rem;  /* Responsive font size */
     border-radius: 15px;
-    margin-top: 70px;
+    margin-top: 170px;
     background-color: #D2B48C;
 }
 
@@ -52,7 +52,7 @@ body {
 
 .center-para{
     text-align: center;
-    margin-top: 50px;
+    margin-top: 150px;
     font-size: 2em; /* Make text bigger */
     line-height: 1.5em; /* Adjust line height for better spacing */
     max-width: 1200px;
