@@ -32,7 +32,7 @@ body {
     background-attachment: fixed;
 }
 
-#bigButton {
+#centerBigButton {
     width: 30%;          /* Responsive width */
     padding: 1em;        /* Responsive padding */
     font-size: 1.25rem;  /* Responsive font size */
@@ -44,12 +44,21 @@ body {
 }
 
 .clickedHeadbar {
-    background-color: grey;
+    background-color: rgb(41, 39, 39);
     color: white;
 }
 
-.center{
+.center-para{
+    text-align: center;
     margin-top: 20px;
-    display: grid;
-    place-items: center;
-  }
+}
+
+.flex-container {
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    height: 100vh; /* Full height of the viewport */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
