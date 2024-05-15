@@ -32,12 +32,11 @@ body {
     background-attachment: fixed;
 }
 
-#centerBigButton {
+#bigButton {
     width: 30%;          /* Responsive width */
     padding: 1em;        /* Responsive padding */
     font-size: 1.25rem;  /* Responsive font size */
     border-radius: 15px;
-    align-items: center;
 }
 
 #bigButton:hover {
@@ -45,11 +44,12 @@ body {
 }
 
 .clickedHeadbar {
-    background-color: black;
+    background-color: grey;
     color: white;
 }
 
 .center-para{
-    text-align: center;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
     margin-top: 20px;
   }
