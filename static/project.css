@@ -2,7 +2,7 @@
     display: flex;
     align-items: center; /* Centers items vertically within the bar */
     justify-content: space-between; /* Spreads items across the bar */
-    background-color: #A9A9A9;
+    background-color: #000000;
     padding: 10px 20px; /* Adds padding around the items */
 }
 
@@ -24,6 +24,12 @@
 
 #headBar .nav-links a:hover {
     background-color: #555;
+}
+
+body {
+    background-image: url('background2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 #bigButton {
