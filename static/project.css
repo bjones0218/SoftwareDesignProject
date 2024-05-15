@@ -37,8 +37,6 @@ body {
     padding: 1em;        /* Responsive padding */
     font-size: 1.25rem;  /* Responsive font size */
     border-radius: 15px;
-    justify-content: center; /* Horizontal centering */
-    align-items: center; /* Vertical centering */
 }
 
 #bigButton:hover {
@@ -50,8 +48,8 @@ body {
     color: white;
 }
 
-.center-para{
-    justify-content: center; /* Horizontal centering */
-    align-items: center; /* Vertical centering */
+.center{
     margin-top: 20px;
+    display: grid;
+    place-items: center;
   }
