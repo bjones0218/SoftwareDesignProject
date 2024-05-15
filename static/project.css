@@ -37,6 +37,8 @@ body {
     padding: 1em;        /* Responsive padding */
     font-size: 1.25rem;  /* Responsive font size */
     border-radius: 15px;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
 }
 
 #bigButton:hover {
