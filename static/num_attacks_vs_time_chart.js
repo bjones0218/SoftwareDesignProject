@@ -1,9 +1,10 @@
-fetch('static/pirate_attacks.geojson').then((response) => response.json()).then((json) => console.log(json));
+var attacks = fetch('static/pirate_attacks.geojson').then((response) => response.json());
+console.log(attacks);
 
 const START_YEAR = 1993;
 const END_YEAR = 2020;
 
-years = [];
+var years = [];
 for (var i=START_YEAR; i<=END_YEAR; i++) {
     years.push(i);
 }
