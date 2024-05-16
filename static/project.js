@@ -9,14 +9,14 @@ window.onscroll = function() {
 
 function mouseEnterExplore(){
     exploreinheadbar = document.getElementById("exploreinheadbar");
-    exploreinheadbar.style.backgroundColor = rgb(78, 74, 74);
+    exploreinheadbar.style.backgroundColor = "rgb(78, 74, 74)";
     bigexplore = document.getElementById("bigButton");
     bigexplore.style.backgroundColor = "#CD853F";
 };
 
 function mouseOutExplore(){
     exploreinheadbar = document.getElementById("exploreinheadbar");
-    exploreinheadbar.style.backgroundColor = 555;
+    exploreinheadbar.style.backgroundColor = "#555";
     bigexplore = document.getElementById("bigButton");
     bigexplore.style.backgroundColor = "#D2B48C";
 };
