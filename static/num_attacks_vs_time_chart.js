@@ -9,7 +9,6 @@ for (var i=START_YEAR; i<=END_YEAR; i++) {
 async function get_attacks() {
     var attacks_response = await fetch('static/pirate_attacks.geojson');
     var attacks = await attacks_response.json();
-    console.log(attacks);
     
     return attacks;
 }
@@ -34,7 +33,6 @@ async function create_chart() {
                                     data: attack_counts,
                                     borderWidth: 1}]},
                     options: {scales: {y: {beginAtZero: true}}}});
-    console.log("Finished creating chart");
 }
 
 create_chart();
