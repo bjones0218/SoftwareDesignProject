@@ -43,7 +43,7 @@ body {
 }
 
 #bigButton:hover {
-    background-color: #CD853F; 
+    background-color: transparent; 
 }
 
 .clickedHeadbar {
