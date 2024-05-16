@@ -68,7 +68,7 @@ body {
     margin-left: 10px;
     padding: 10px;
     font-size: 16px;
-    background-color: rgba(0, 0, 0, 0.7); /* Match header background */
+    background-color: rgba(75, 74, 74, 0.7); /* Match header background */
     color: white;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -76,12 +76,7 @@ body {
     background-image: url('arrow-down.png'); /* Path to your custom arrow image */
     background-repeat: no-repeat;
     background-position: right 10px center;
-    background-size: 15px;
-}
-
-.artful-dropdown option {
-    background-color: rgba(0, 0, 0, 0.9); /* Dark background for options */
-    color: white;
+    background-size: 10px;
 }
 
 .artful-dropdown:focus {
