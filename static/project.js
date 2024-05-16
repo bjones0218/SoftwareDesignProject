@@ -6,3 +6,17 @@ window.onscroll = function() {
         headBar.style.backgroundColor = '#333';
     }
 };
+
+function mouseEnterExplore(){
+    exploreinheadbar = document.getElementById("exploreinheadbar");
+    exploreinheadbar.style.backgroundColor = "#555";
+    bigexplore = document.getElementById("bigButton");
+    bigexplore.style.backgroundColor = "#CD853F";
+};
+
+function mouseOutExplore(){
+    exploreinheadbar = document.getElementById("exploreinheadbar");
+    exploreinheadbar.style.backgroundColor = "#000000";
+    bigexplore = document.getElementById("bigButton");
+    bigexplore.style.backgroundColor = "#D2B48C";
+};

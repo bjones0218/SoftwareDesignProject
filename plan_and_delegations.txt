@@ -14,10 +14,12 @@ Blake, Henry
 Johnathan
 5. Adding country data to the map. Making it so that you can click the countries to display indicators about them.
 Henry
-
+6. Fill in details and about us page. Add some info. to home.
+Blake
 
 Links:
 https://maplibre.org/maplibre-gl-js/docs/examples/cluster/
+https://www.chartjs.org/docs/latest/
 
 Maptiler API key:
 D7IRYVVxzUM00mJgVi72

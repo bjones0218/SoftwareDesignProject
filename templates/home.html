@@ -6,33 +6,35 @@
     <title>Home</title>
     <link rel="stylesheet" href="/static/project.css">
 </head>
+<div id="headBar">
+    <a href="/" id="logoLink">
+        <img src="/static/logo2.svg" alt="Logo" id="logo" style="height: 50px;">
+    </a>
+    <div class="nav-links">
+        <a href="/explore" id="exploreinheadbar" onmouseenter="mouseEnterExplore()" onmouseout="mouseOutExplore()">Explore</a>
+        <a href="/explorebyregion">Explore By Region</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/details">Details</a>
+    </div>   
+</div>
 <body>
-    <div id="headBar">
-        <a href="/" id="logoLink">
-            <img src="/static/logo2.svg" alt="Logo" id="logo" style="height: 50px;">
-        </a>
-        <div class="nav-links">
-            <a href="/explore">Explore</a>
-            <a href="/explorebyregion">Explore By Region</a>
-            <a href="/aboutus">About Us</a>
-            <a href="/details">Details</a>
-        </div>   
-    </div>
+    
 
     <script src="/static/project.js"></script>
 
-    <p class = "center-para">
-        <h3 class="home-info">
-            Welcome to the Pirates of the Cannonean Home Page! This website displays maritime pirate attack data from 1993-2020.
-            You can explore the attacks in the explore page and also learn about the countries where pirate attacks happen!
-            To focus on specific regions, navigate to the 'Explore by Region' page. For information about the dataset
-            and the technology used for this site, check out the 'Details' page.
-        </h3>
-        <a href="/explore">
-            <button class="horizontal-center" id="bigButton">
+    <div id="welcomemessage">
+        <p class = "center-para" style="color:white;">
+            Welcome! This website is designed to provide some information <br>
+            about pirate attacks around the world from 1993 to 2020.
+        </p>
+    </div>
+
+    <p style="text-align:center">
+        <a href="/explore"><button id="bigButton" 
+            onmouseenter="mouseEnterExplore()" onmouseout="mouseOutExplore()">
             Explore
-            </button>
-        </a>
+        </button></a>
+    </p>
 
 </body>
 </html>

@@ -32,46 +32,60 @@ body {
     background-color: #555;
 }
 
+body {
+    margin: 0;
+    background-image: url('background3.webp');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 #bigButton {
+    text-align: center;
     width: 30%;          /* Responsive width */
     padding: 1em;        /* Responsive padding */
     font-size: 1.25rem;  /* Responsive font size */
-    border-radius: 40px;
-    background-color: black;
-    color: white;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    border-style: hidden;
-    transition: all 0.3s ease;
+    border-radius: 15px;
+    margin-top: 20px;
+    background-color: #D2B48C;
 }
 
-#bigButton:hover {
-    /* background-color: #D3D3D3;  */
-    transform: scale(1.2);
-
-}
 
 .clickedHeadbar {
-    background-color: black;
+    background-color: rgb(78, 74, 74);
     color: white;
 }
 
 .center-para{
     text-align: center;
-    margin-top: 20px;
+    margin-top: 250px;
+    font-size: 2.5em; /* Make text bigger */
+    line-height: 1.5em; /* Adjust line height for better spacing */
 }
 
-.home-info{
-    text-align: center;
-    color: rgb(255, 255, 255);
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-left: 15%;
-    margin-right: 15%;
+.dropdown-container {
+    margin: 20px;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
 }
 
-.horizontal-center {
-    margin: 0;
-    position: absolute;
-    left: 33%;
-    /* -ms-transform: translateX(-50%);
-    transform: translateX(-50%); */
+.artful-dropdown {
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgba(75, 74, 74, 0.7); /* Match header background */
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none; /* Remove default arrow */
+    background-image: url('arrow-down.png'); /* Path to your custom arrow image */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+}
+
+.artful-dropdown:focus {
+    outline: none;
+    border-color: #888;
 }
