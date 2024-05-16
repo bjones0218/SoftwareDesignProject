@@ -1,5 +1,4 @@
 #headBar {
-    margin: 0;
     display: flex;
     align-items: center; /* Centers items vertically within the bar */
     justify-content: space-between; /* Spreads items across the bar */
@@ -28,6 +27,7 @@
 }
 
 body {
+    margin: 0;
     background-image: url('background3.webp');
     background-size: cover;
     background-attachment: fixed;
