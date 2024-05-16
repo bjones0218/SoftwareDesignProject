@@ -39,11 +39,7 @@ body {
     font-size: 1.25rem;  /* Responsive font size */
     border-radius: 15px;
     margin-top: 20px;
-    background-color: #D2B48C;
-}
-
-#bigButton:hover {
-    background-color: transparent; 
+    background-color: transparent;
 }
 
 .clickedHeadbar {
