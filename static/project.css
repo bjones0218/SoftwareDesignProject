@@ -1,4 +1,5 @@
 #headBar {
+    width: 100%;
     display: flex;
     align-items: center; /* Centers items vertically within the bar */
     justify-content: space-between; /* Spreads items across the bar */
