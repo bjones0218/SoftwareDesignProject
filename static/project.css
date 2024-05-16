@@ -39,8 +39,9 @@ body {
     font-size: 1.25rem;  /* Responsive font size */
     border-radius: 15px;
     margin-top: 20px;
-    background-color: transparent;
+    background-color: #D2B48C;
 }
+
 
 .clickedHeadbar {
     background-color: rgb(78, 74, 74);
