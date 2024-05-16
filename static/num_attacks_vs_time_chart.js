@@ -18,6 +18,7 @@ async function create_chart() {
     var attacks = await get_attacks();
 
     var attack_counts = Array(years.length);
+    attack_counts.fill(0);
 
     for (var i=0; i<attacks.features.length; i++) {
         var attack = attacks.features[i];
