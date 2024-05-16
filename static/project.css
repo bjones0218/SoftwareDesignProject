@@ -55,3 +55,36 @@ body {
     font-size: 2.5em; /* Make text bigger */
     line-height: 1.5em; /* Adjust line height for better spacing */
 }
+
+.dropdown-container {
+    margin: 20px;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+}
+
+.artful-dropdown {
+    margin-left: 10px;
+    padding: 10px;
+    font-size: 16px;
+    background-color: rgba(0, 0, 0, 0.7); /* Match header background */
+    color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    appearance: none; /* Remove default arrow */
+    background-image: url('arrow-down.png'); /* Path to your custom arrow image */
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 15px;
+}
+
+.artful-dropdown option {
+    background-color: rgba(0, 0, 0, 0.9); /* Dark background for options */
+    color: white;
+}
+
+.artful-dropdown:focus {
+    outline: none;
+    border-color: #888;
+}
