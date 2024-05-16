@@ -33,6 +33,7 @@ body {
 }
 
 #bigButton {
+    text-align: center;
     width: 30%;          /* Responsive width */
     padding: 1em;        /* Responsive padding */
     font-size: 1.25rem;  /* Responsive font size */
