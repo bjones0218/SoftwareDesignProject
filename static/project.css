@@ -1,3 +1,9 @@
+body {
+    background-image: url('background2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+}
+
 #headBar {
     display: flex;
     align-items: center; /* Centers items vertically within the bar */
@@ -26,21 +32,22 @@
     background-color: #555;
 }
 
-body {
-    background-image: url('background2.jpg');
-    background-size: cover;
-    background-attachment: fixed;
-}
-
 #bigButton {
     width: 30%;          /* Responsive width */
     padding: 1em;        /* Responsive padding */
     font-size: 1.25rem;  /* Responsive font size */
-    border-radius: 15px;
+    border-radius: 40px;
+    background-color: black;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-style: hidden;
+    transition: all 0.3s ease;
 }
 
 #bigButton:hover {
-    background-color: #D3D3D3; 
+    /* background-color: #D3D3D3;  */
+    transform: scale(1.2);
+
 }
 
 .clickedHeadbar {
@@ -51,4 +58,20 @@ body {
 .center-para{
     text-align: center;
     margin-top: 20px;
-  }
+}
+
+.home-info{
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 15%;
+    margin-right: 15%;
+}
+
+.horizontal-center {
+    margin: 0;
+    position: absolute;
+    left: 33%;
+    /* -ms-transform: translateX(-50%);
+    transform: translateX(-50%); */
+}
