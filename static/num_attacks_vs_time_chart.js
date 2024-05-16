@@ -1,4 +1,5 @@
-var attacks = fetch('static/pirate_attacks.geojson').then((response) => response.json());
+var attacks_response = await fetch('static/pirate_attacks.geojson');
+var attacks = await attacks_response.json();
 console.log(attacks);
 
 const START_YEAR = 1993;
