@@ -15,13 +15,22 @@ async function get_attacks() {
 }
 
 async function create_chart() {
-    var attcks = await get_attacks();
+    var attacks = await get_attacks();
+
+    var attack_counts = Array(years.length);
+
+    for (var i=0; i<attacks.features.length; i++) {
+        var attack = attacks.features[i];
+        var attack_year = parseInt(attack.properties.date.substring(0, 4));
+        attack_counts[attack_year - START_YEAR] += 1;
+    }
+
     const context = document.getElementById('attacks_vs_time_chart');
     https://www.chartjs.org/docs/latest/getting-started/
     new Chart(context, {type: 'bar',
                     data: {labels: years,
                         datasets: [{label: 'Number of attacks',
-                                    data: [12, 19, 3, 5, 2, 3],
+                                    data: attack_counts,
                                     borderWidth: 1}]},
                     options: {scales: {y: {beginAtZero: true}}}});
     console.log("Finished creating chart");
