@@ -54,6 +54,7 @@ body {
     margin-top: 250px;
     font-size: 2.5em; /* Make text bigger */
     line-height: 1.5em; /* Adjust line height for better spacing */
+    background: rgba(0, 0, 0, 0.5);
 }
 
 .dropdown-container {
