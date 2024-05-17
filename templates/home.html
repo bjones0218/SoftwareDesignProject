@@ -6,18 +6,19 @@
     <title>Home</title>
     <link rel="stylesheet" href="/static/project.css">
 </head>
+<div id="headBar">
+    <a href="/" id="logoLink">
+        <img src="/static/logo2.svg" alt="Logo" id="logo" style="height: 50px;">
+    </a>
+    <div class="nav-links">
+        <a href="/explore" id="exploreinheadbar" onmouseenter="mouseEnterExplore()" onmouseout="mouseOutExplore()">Explore</a>
+        <a href="/explorebyregion">Explore By Region</a>
+        <a href="/aboutus">About Us</a>
+        <a href="/details">Details</a>
+    </div>   
+</div>
 <body>
-    <div id="headBar">
-        <a href="/" id="logoLink">
-            <img src="/static/logo2.svg" alt="Logo" id="logo" style="height: 50px;">
-        </a>
-        <div class="nav-links">
-            <a href="/explore" id="exploreinheadbar" onmouseenter="mouseEnterExplore()" onmouseout="mouseOutExplore()">Explore</a>
-            <a href="/explorebyregion">Explore By Region</a>
-            <a href="/aboutus">About Us</a>
-            <a href="/details">Details</a>
-        </div>   
-    </div>
+    
 
     <script src="/static/project.js"></script>
 

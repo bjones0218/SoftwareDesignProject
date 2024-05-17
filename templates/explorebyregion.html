@@ -20,11 +20,18 @@
         </div>   
     </div>
 
-    <select id="last_name" onchange="updateName()">
-
-        {{DropdownOptions|safe}}
-        
-      </select>
+    <div class="dropdown-container">
+        <label for="continent-select">Choose the continent you want to explore:</label>
+        <select id="continent-select" class="artful-dropdown">
+            <option value="asia">Asia</option>
+            <option value="europe">Europe</option>
+            <option value="north-america">North America</option>
+            <option value="south-america">South America</option>
+            <option value="africa">Africa</option>
+            <option value="australia">Australia</option>
+            <option value="antarctica">Antarctica</option>
+        </select>
+    </div>
 
 </body>
 </html>
