@@ -27,7 +27,7 @@ async function create_chart() {
 
     const context = document.getElementById('attacks_vs_time_chart');
     https://www.chartjs.org/docs/latest/getting-started/
-    new Chart(context, {type: 'bar',
+    new Chart(context, {type: 'line',
                     data: {labels: years,
                         datasets: [{label: 'Number of attacks',
                                     data: attack_counts,
