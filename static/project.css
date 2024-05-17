@@ -35,7 +35,7 @@ body {
 
 #bigButton {
     text-align: center;
-    width: 30%;          /* Responsive width */
+    width: 40%;          /* Responsive width */
     padding: 1em;        /* Responsive padding */
     font-size: 1.25rem;  /* Responsive font size */
     border-radius: 50px;
