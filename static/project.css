@@ -51,19 +51,10 @@ body {
 
 .center-para{
     text-align: center;
+    background-color: black;
     margin-top: 250px;
     font-size: 2.5em; /* Make text bigger */
     line-height: 1.5em; /* Adjust line height for better spacing */
-}
-
-.messagebox{
-    align-items: center;
-    width: 1500px;
-    height: 100px;
-    background-color: black;
-    opacity: 0.25;
-    padding: 30px;
-    margin: 10px;
 }
 
 .dropdown-container {
