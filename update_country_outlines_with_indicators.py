@@ -13,6 +13,7 @@ connection = psycopg2.connect(
 if connection is None:
     print("Connection failed")
 cursor = connection.cursor()
+# hi
 
 # https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file
 with open("static/raw_countries.geojson", "r", encoding="utf-8") as raw_country_file:
