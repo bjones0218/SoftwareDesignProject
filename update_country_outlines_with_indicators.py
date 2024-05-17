@@ -42,7 +42,7 @@ while (i < len(raw_data["features"])):
         feature["properties"]["region"] = region;
         STARTING_YEAR = 1993
         ENDING_YEAR = 2019
-        country_indicators_time_series = [0] * ENDING_YEAR - STARTING_YEAR + 1;
+        country_indicators_time_series = [0] * (ENDING_YEAR - STARTING_YEAR + 1);
         for yearly_data in country_indicators:
             current_year = yearly_data[1]
             year_indicators = dict(corruption_index = yearly_data[2],
