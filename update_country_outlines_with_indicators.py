@@ -38,11 +38,11 @@ while (i < len(raw_data["features"])):
     else:
         # yearly data is stored in, e.g., data["features"][17]["indicators"]["2001"]["gdp"]
         cursor.execute(f"SELECT region FROM country_codes WHERE country LIKE '{iso_country_code}'")
-        region = cursor.fetchone()
+        region = cursor.fetchone()[0]
         feature["properties"]["region"] = region;
         STARTING_YEAR = 1993
         ENDING_YEAR = 2019
-        country_indicators_time_series = list(ENDING_YEAR - STARTING_YEAR + 1);
+        country_indicators_time_series = [0] * (ENDING_YEAR - STARTING_YEAR + 1);
         for yearly_data in country_indicators:
             current_year = yearly_data[1]
             year_indicators = dict(corruption_index = yearly_data[2],
@@ -54,7 +54,7 @@ while (i < len(raw_data["features"])):
                                    unemployment_rate = yearly_data[8],
                                    total_gr = yearly_data[9],
                                    gdp_industry = yearly_data[10])
-            country_indicators_time_series[current_year - STARTING_YEAR];
+            country_indicators_time_series[current_year - STARTING_YEAR] = year_indicators;
         feature["properties"]["indicators"] = country_indicators_time_series
         # if iso_country_code == "CHN":
             # print(feature["properties"])
