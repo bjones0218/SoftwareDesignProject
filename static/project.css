@@ -56,6 +56,16 @@ body {
     line-height: 1.5em; /* Adjust line height for better spacing */
 }
 
+.messagebox{
+    align-items: center;
+    width: 1500px;
+    height: 100px;
+    background-color: black;
+    opacity: 0.25;
+    padding: 20px;
+    margin: 10px;
+}
+
 .dropdown-container {
     margin: 20px;
     color: white;
