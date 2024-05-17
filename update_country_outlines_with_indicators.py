@@ -38,7 +38,7 @@ while (i < len(raw_data["features"])):
     else:
         # yearly data is stored in, e.g., data["features"][17]["indicators"]["2001"]["gdp"]
         cursor.execute(f"SELECT region FROM country_codes WHERE country LIKE '{iso_country_code}'")
-        region = cursor.fetchone()
+        region = cursor.fetchone()[0]
         feature["properties"]["region"] = region;
         STARTING_YEAR = 1993
         ENDING_YEAR = 2019
