@@ -32,7 +32,8 @@ async function create_chart() {
                         datasets: [{label: 'Number of attacks',
                                     data: attack_counts,
                                     borderWidth: 1}]},
-                    options: {scales: {y: {beginAtZero: true}}}});
+                    options: {scales: {y: {beginAtZero: true}},
+                              fill: true}});
 }
 
 create_chart();
