@@ -85,26 +85,32 @@ body {
     border-color: #888;
 }
 
-.select {
+select {
     width: 200px; /* Adjust width as needed */
-    padding: 8px 12px; /* Padding for better touch interaction */
-    border: 1px solid #ccc; /* Subtle border */
-    border-radius: 4px; /* Rounded corners */
-    background-color: white;
-    font-size: 16px; /* Increase font size for better readability */
-    cursor: pointer; /* Cursor pointer to indicate it's selectable */
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Soft shadow for depth */
-
-    -webkit-appearance: none; /* Remove default styling in WebKit browsers */
-    -moz-appearance: none; /* Remove default styling in Firefox */
-    appearance: none; /* Specifying that dropdown should not have the part of platform-native styling outside the border-box */
-    background-image: url('dropdown-arrow.svg'); /* Custom arrow */
-    background-repeat: no-repeat;
-    background-position: right 10px center; /* Positioning custom arrow on the right */
-    background-size: 12px; /* Size of the custom arrow */
+    padding: 8px 12px;
+    border: 2px solid #d3d3d3; /* Light grey border */
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    color: #333; /* Dark grey text color for contrast */
+    margin-bottom: 20px; /* Add space below the dropdown */
 }
 
-.select:hover, select:focus {
-    border-color: #888; /* Change border color on hover/focus */
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15); /* Stronger shadow for emphasis */
+select:hover, select:focus {
+    border-color: #aaa; /* Slightly darker grey on hover/focus */
+    background-color: rgba(255, 255, 255, 1); /* Less transparent on hover */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.charts {
+    background-color: rgba(255, 255, 255, 0.9); /* Very light background to differentiate area */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow to lift the chart off the page */
+    padding: 20px; /* Padding to give space inside the chart area */
+    border-radius: 8px; /* Rounded corners for modern look */
+    margin: auto; /* Center the chart if necessary */
+    display: block; /* Make sure the canvas behaves as a block for margin to work */
+    width: 80%; /* Adjust based on your design needs */
+    height: auto; /* Maintain aspect ratio */
 }
