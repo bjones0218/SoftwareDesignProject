@@ -63,7 +63,7 @@ async function create_chart(region) {
     const context = document.getElementById('attacks_vs_time_chart');
     var chart_label = region == "World" ? "Number of attacks" : "Number of attacks in " + region;
     https://www.chartjs.org/docs/latest/getting-started/
-    myChart = new Chart(context, {type: 'line',
+    attacks_vs_time_chart = new Chart(context, {type: 'line',
                     data: {labels: years,
                         datasets: [{label: chart_label,
                                     data: attack_counts,
