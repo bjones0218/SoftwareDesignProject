@@ -70,6 +70,7 @@ async function create_chart(region) {
                                     borderWidth: 1}]},
                     options: {scales: {y: {beginAtZero: true}},
                               fill: true,
+                              responsive: true,
                             }});
 }
 
