@@ -14,7 +14,7 @@ async function get_attacks() {
 }
 
 async function get_region_of_all_country_codes() {
-    var country_outlines_response = await fetch('static/country_outlines_with_indicators');
+    var country_outlines_response = await fetch('static/country_outlines_with_indicators.geojson');
     var country_outlines = await country_outlines_response.json();
     var dictionary = {};
     for (var i=0; i<country_outlines.features.length; i++) {
