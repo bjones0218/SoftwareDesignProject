@@ -15,13 +15,10 @@ def explore():
 def aboutus():
     return render_template("aboutus.html")
 
-@app.route('/details')
+@app.route('/charts')
 def details():
     return render_template("details.html")
 
-@app.route('/explorebyregion')
-def explorebyregion():
-    return render_template("explorebyregion.html")
     
 if __name__ == '__main__':
     my_port = 5216
