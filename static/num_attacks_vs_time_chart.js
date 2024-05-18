@@ -84,8 +84,3 @@ function updateChart() {
     var region = document.getElementById('chartSelector').value;
     create_chart(region);
 }
-
-// Initialize with the default chart
-window.onload = function() {
-    create_chart("World");
-  };
