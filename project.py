@@ -17,7 +17,7 @@ def aboutus():
 
 @app.route('/charts')
 def details():
-    return render_template("details.html")
+    return render_template("charts.html")
 
     
 if __name__ == '__main__':
