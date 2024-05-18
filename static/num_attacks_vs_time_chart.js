@@ -81,12 +81,6 @@ function updateChart() {
     if (attacks_vs_time_chart) {
         attacks_vs_time_chart.destroy(); // Destroy the old chart to draw a new one
     }
-    var ctx = document.getElementById('attacks_vs_time_chart').getContext('2d');
     var region = document.getElementById('chartSelector').value;
     create_chart(region);
 }
-
-// Initialize with the default chart
-window.onload = function() {
-    updateChart();
-  };
