@@ -1,6 +1,7 @@
 const START_YEAR = 1993;
 const END_YEAR = 2020;
 var attacks_vs_time_chart;
+let gradient = ctx.createLinearGradient(0, 0, 0, 400);
 
 var years = [];
 for (var i=START_YEAR; i<=END_YEAR; i++) {
@@ -60,6 +61,10 @@ async function create_chart(region) {
         }
     }
 
+    //designing color
+    gradient.addColorStop(0, "rgba(58,123,213,1");
+    gradient.addColorStop(0, "rgba(0,210,255,o.3)");
+
     const context = document.getElementById('attacks_vs_time_chart');
     var chart_label = region == "World" ? "Number of attacks" : "Number of attacks in " + region;
     https://www.chartjs.org/docs/latest/getting-started/
@@ -67,7 +72,8 @@ async function create_chart(region) {
                     data: {labels: years,
                         datasets: [{label: chart_label,
                                     data: attack_counts,
-                                    borderWidth: 1}]},
+                                    borderWidth: 1,
+                                    backgroundColor: gradient}]},
                     options: {scales: {y: {beginAtZero: true}},
                               fill: true,
                               responsive: true,
