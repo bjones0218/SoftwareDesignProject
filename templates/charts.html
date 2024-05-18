@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,6 +8,7 @@
     <link rel="stylesheet" href="/static/project.css">
     <script src="/static/project.js"></script>
 </head>
+
 <body onload='create_chart("World")'>
     <div id="headBar">
         <a href="/" id="logoLink">
@@ -16,19 +18,19 @@
             <a href="/explore">Explore</a>
             <a class="clickedHeadbar" href="/charts">Charts</a>
             <a href="/aboutus">About Us</a>
-        </div>   
+        </div>
     </div>
 
     <div>
         <select id="chartSelector" onchange="updateChart()">
-          <option value="World">World</option>
-          <option value="East Asia & Pacific">East Asia & Pacific</option>
-          <option value="Europe & Central Asia">Europe & Central Asia</option>
-          <option value="Latin America & Caribbean">Latin America & Caribbean</option>
-          <option value="Middle East & North Africa">Middle East & North Africa</option>
-          <option value="North America">North America</option>
-          <option value="South Asia">South Asia</option>
-          <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+            <option value="World">World</option>
+            <option value="East Asia & Pacific">East Asia & Pacific</option>
+            <option value="Europe & Central Asia">Europe & Central Asia</option>
+            <option value="Latin America & Caribbean">Latin America & Caribbean</option>
+            <option value="Middle East & North Africa">Middle East & North Africa</option>
+            <option value="North America">North America</option>
+            <option value="South Asia">South Asia</option>
+            <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
         </select>
     </div>
 
@@ -38,5 +40,7 @@
     <script src="static/num_attacks_vs_time_chart.js"></script>
     
 
+
 </body>
+
 </html>
