@@ -70,10 +70,10 @@ async function create_chart(region) {
     https://www.chartjs.org/docs/latest/getting-started/
     attacks_vs_time_chart = new Chart(context, {type: 'line',
                     data: {labels: years,
+                           backgroundColor: gradient,
                         datasets: [{label: chart_label,
                                     data: attack_counts,
-                                    borderWidth: 1,
-                                    backgroundColor: gradient}]},
+                                    borderWidth: 1}]},
                     options: {scales: {y: {beginAtZero: true}},
                               fill: true,
                               responsive: true,
