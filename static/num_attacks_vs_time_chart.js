@@ -1,7 +1,7 @@
 const START_YEAR = 1993;
 const END_YEAR = 2020;
 var attacks_vs_time_chart;
-let gradient = ctx.createLinearGradient(0, 0, 0, 400);
+//let gradient = ctx.createLinearGradient(0, 0, 0, 400);
 
 var years = [];
 for (var i=START_YEAR; i<=END_YEAR; i++) {
@@ -62,8 +62,8 @@ async function create_chart(region) {
     }
 
     //designing color
-    gradient.addColorStop(0, "rgba(58,123,213,1");
-    gradient.addColorStop(0, "rgba(0,210,255,o.3)");
+    // gradient.addColorStop(0, "rgba(58,123,213,1");
+    // gradient.addColorStop(0, "rgba(0,210,255,0.3)");
 
     const context = document.getElementById('attacks_vs_time_chart');
     var chart_label = region == "World" ? "Number of attacks" : "Number of attacks in " + region;
