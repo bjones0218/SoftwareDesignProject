@@ -1,5 +1,6 @@
 const START_YEAR = 1993;
 const END_YEAR = 2020;
+var attacks_vs_time_chart;
 
 var years = [];
 for (var i=START_YEAR; i<=END_YEAR; i++) {
@@ -62,7 +63,7 @@ async function create_chart(region) {
     const context = document.getElementById('attacks_vs_time_chart');
     var chart_label = region == "World" ? "Number of attacks" : "Number of attacks in " + region;
     https://www.chartjs.org/docs/latest/getting-started/
-    new Chart(context, {type: 'line',
+    myChart = new Chart(context, {type: 'line',
                     data: {labels: years,
                         datasets: [{label: chart_label,
                                     data: attack_counts,
@@ -75,3 +76,17 @@ async function create_chart(region) {
                             }});
 }
 
+// this unction is to destroy the old chart and create new chart when drow down list element change
+function updateChart() {
+    if (attacks_vs_time_chart) {
+        attacks_vs_time_chart.destroy(); // Destroy the old chart to draw a new one
+    }
+    var ctx = document.getElementById('attacks_vs_time_chart').getContext('2d');
+    var region = document.getElementById('chartSelector').value;
+    create_chart(region);
+}
+
+// Initialize with the default chart
+window.onload = function() {
+    updateChart();
+  };
