@@ -24,6 +24,16 @@ async function get_region_of_all_country_codes() {
     return dictionary;
 }
 
+/* possible regions are:
+East Asia & Pacific
+Europe & Central Asia
+Latin America & Caribbean
+Middle East & North Africa
+North America
+South Asia
+Sub-Saharan Africa
+World
+*/
 async function create_chart(region) {
     var attacks = await get_attacks();
 
