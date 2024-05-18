@@ -70,9 +70,6 @@ async function create_chart(region) {
                                     borderWidth: 1}]},
                     options: {scales: {y: {beginAtZero: true}},
                               fill: true,
-                              responsive: true,
-                              plugins: {title: {display: true,
-                                text: (ctx) => 'Point Style: ' + ctx.chart.data.datasets[0].pointStyle,}}
                             }});
 }
 
