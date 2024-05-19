@@ -62,9 +62,9 @@ async function create_chart(region) {
     }
 
     //designing color
-    // let gradient = document.getElementById("attacks_vs_time_chart").createLinearGradient(0, 0, 0, 400);
-    // gradient.addColorStop(0, "rgba(58,123,213,1");
-    // gradient.addColorStop(0, "rgba(0,210,255,0.3)");
+    let gradient = document.getElementById("attacks_vs_time_chart").createLinearGradient(0, 0, 0, 400);
+    gradient.addColorStop(0, "rgba(58,123,213,1");
+    gradient.addColorStop(0, "rgba(0,210,255,0.3)");
 
     const context = document.getElementById('attacks_vs_time_chart');
     var chart_label = region == "World" ? "Number of attacks" : "Number of attacks in " + region;
@@ -73,7 +73,8 @@ async function create_chart(region) {
                     data: {labels: years,
                         datasets: [{label: chart_label,
                                     data: attack_counts,
-                                    borderWidth: 1}]},
+                                    borderWidth: 1,
+                                    backgroungColor: gradient}]},
                     options: {scales: {y: {beginAtZero: true}},
                               fill: true,
                               responsive: true,
