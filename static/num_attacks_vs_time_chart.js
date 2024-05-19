@@ -64,7 +64,7 @@ async function create_chart(region) {
     //designing color
     const ctx = document.getElementById("attacks_vs_time_chart").getContext('2d');
     let gradient = ctx.createLinearGradient(0, 0, 0, 400);
-    gradient.addColorStop(0, "rgba(58,123,213,1");
+    gradient.addColorStop(0, "rgba(58,123,213,1)");
     gradient.addColorStop(1, "rgba(0,210,255,0.3)");
 
     const context = document.getElementById('attacks_vs_time_chart');
@@ -74,11 +74,11 @@ async function create_chart(region) {
                     data: {labels: years,
                         datasets: [{label: chart_label,
                                     data: attack_counts,
-                                    backgroungColor: gradient,
                                     borderWidth: 1}]},
                     options: {scales: {y: {beginAtZero: true}},
                               fill: true,
                               responsive: true,
+                              backgroungColor: gradient,
                             }});
 }
 
