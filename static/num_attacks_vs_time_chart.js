@@ -78,7 +78,7 @@ async function create_chart(region) {
                                     borderWidth: 1}]},
                     options: {scales: {y: {beginAtZero: true}},
                               fill: true,
-                              radius: 4,
+                              radius: 3.6,
                               hoverRadius:10,
                               responsive: true,
                               backgroundColor: gradient,
