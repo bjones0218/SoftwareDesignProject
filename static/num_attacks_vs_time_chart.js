@@ -64,8 +64,9 @@ async function create_chart(region) {
     //designing color
     const ctx = document.getElementById("attacks_vs_time_chart").getContext('2d');
     let gradient = ctx.createLinearGradient(0, 0, 0, 400);
-    gradient.addColorStop(0, 'rgba(210, 180, 140, 0.8)'); // Lighter tan at the top
-    gradient.addColorStop(1, 'rgba(164, 134, 94, 0.8)'); // Darker tan at the bottom
+    gradient.addColorStop(0, 'rgba(135, 206, 250, 1)');   // Very light sky blue at the top
+    gradient.addColorStop(0.75, 'rgba(0, 104, 179, 1)');  // Medium blue at 75%
+    gradient.addColorStop(1, 'rgba(25, 83, 135, 1)');
 
     const context = document.getElementById('attacks_vs_time_chart');
     var chart_label = region == "World" ? "Number of attacks" : "Number of attacks in " + region;
