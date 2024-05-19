@@ -62,7 +62,8 @@ async function create_chart(region) {
     }
 
     //designing color
-    let gradient = document.getElementById("attacks_vs_time_chart").createLinearGradient(0, 0, 0, 400);
+    const ctx = document.getElementById("attacks_vs_time_chart").getContext('2d');
+    let gradient = ctx.createLinearGradient(0, 0, 0, 400);
     gradient.addColorStop(0, "rgba(58,123,213,1");
     gradient.addColorStop(0, "rgba(0,210,255,0.3)");
 
