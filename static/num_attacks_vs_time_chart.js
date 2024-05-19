@@ -83,6 +83,7 @@ async function create_chart(region) {
                               responsive: true,
                               backgroundColor: gradient,
                               pointBackgroundColor: "#000",
+                              borderColor: "#fff",
                             }});
 }
 
