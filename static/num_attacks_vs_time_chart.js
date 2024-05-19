@@ -75,12 +75,12 @@ async function create_chart(region) {
                     data: {labels: years,
                         datasets: [{label: chart_label,
                                     data: attack_counts,
-                                    backgroundColor: gradient,
-                                    pointBackgroudColor: "#000",
                                     borderWidth: 1}]},
                     options: {scales: {y: {beginAtZero: true}},
                               fill: true,
                               responsive: true,
+                              backgroundColor: gradient,
+                              pointBackgroudColor: "#000",
                             }});
 }
 
