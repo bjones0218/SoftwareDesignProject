@@ -61,12 +61,13 @@ async function create_chart(region) {
         }
     }
 
-    
-    const context = document.getElementById('attacks_vs_time_chart');
     //designing color
-    let gradient = context.createLinearGradient(0, 0, 0, 400);
+    const ctx = document.getElementById("attacks_vs_time_chart").getContext('2d');
+    let gradient = ctx.createLinearGradient(0, 0, 0, 400);
     gradient.addColorStop(0, "rgba(58,123,213,1");
     gradient.addColorStop(1, "rgba(0,210,255,0.3)");
+
+    const context = document.getElementById('attacks_vs_time_chart');
     var chart_label = region == "World" ? "Number of attacks" : "Number of attacks in " + region;
     https://www.chartjs.org/docs/latest/getting-started/
     attacks_vs_time_chart = new Chart(context, {type: 'line',
