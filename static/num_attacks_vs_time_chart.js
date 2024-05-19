@@ -78,7 +78,7 @@ async function create_chart(region) {
                     options: {scales: {y: {beginAtZero: true}},
                               fill: true,
                               responsive: true,
-                              backgroungColor: gradient,
+                              backgroundColor: gradient,
                             }});
 }
 
