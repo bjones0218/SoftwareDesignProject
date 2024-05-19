@@ -82,7 +82,7 @@ async function create_chart(region) {
                               hoverRadius:10,
                               responsive: true,
                               backgroundColor: gradient,
-                              pointBackgroundColor: "#000",
+                              pointBackgroundColor: "#333333",
                               borderColor: "#fff",
                             }});
 }
