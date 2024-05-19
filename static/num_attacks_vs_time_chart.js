@@ -78,6 +78,8 @@ async function create_chart(region) {
                                     borderWidth: 1}]},
                     options: {scales: {y: {beginAtZero: true}},
                               fill: true,
+                              radius: 8,
+                              hitRadius:40,
                               responsive: true,
                               backgroundColor: gradient,
                               pointBackgroudColor: "#000",
