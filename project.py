@@ -19,6 +19,10 @@ def aboutus():
 def details():
     return render_template("charts.html")
 
+@app.route('/pirategame')
+def pirategame():
+    return render_template("game.html")
+
     
 if __name__ == '__main__':
     my_port = 5216
