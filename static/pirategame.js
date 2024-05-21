@@ -17,9 +17,11 @@ var counter = 0;
 var ships = [];
 var myInterval;
 
-let minute = 0; 
 let second = 0; 
 let count = 0;
+
+const img = new Image();
+img.src = 'static/ship.jpg';
 
 window.onload = function () {
     // Set board height and width
@@ -43,11 +45,13 @@ function onStartClicked () {
         counter = 0;
         ships = [];
         timer = false; 
-        minute = 0; 
         second = 0; 
         count = 0; 
-        document.getElementById('min').innerHTML = "00"; 
         document.getElementById('sec').innerHTML = "00"; 
+        positionX = (width*blockSize)/2;
+        positionY = (height*blockSize)/2;
+        speedX = 0;
+        speedY = 0;
     }
     else {
         gameOver = false;
@@ -62,10 +66,10 @@ function onStartClicked () {
 function checkCollision (ship){
 	console.log("collision checked");
 
-	if ((positionX >= ((ship[1] + blockSize) - 2)) && (positionX <= ((ship[1] + blockSize) + 2 )) && (positionY + blockSize >= ship[0]) && ((positionY + blockSize) <= ship[0] + (2 * blockSize)) ||
-        (positionX + blockSize >= (ship[1] - 2)) && (positionX + blockSize <= (ship[1] + 2 )) && (positionY + blockSize >= ship[0]) && ((positionY + blockSize) <= ship[0] + (2 * blockSize)) ||
-		((positionY >= ((ship[0] + blockSize) - 2)) && (positionY <= ((ship[0] + blockSize) + 2 )) && (positionX + blockSize >= ship[1]) && ((positionX + blockSize) <= ship[1] + (2 * blockSize))) ||
-        (positionY + blockSize >= (ship[0] - 2)) && (positionY + blockSize <= (ship[0]+ 2 )) && (positionX + blockSize >= ship[1]) && ((positionX + blockSize) <= ship[1] + (2 * blockSize)) ){ 
+	if (((positionX >= ((ship[1] + blockSize) - 2)) && (positionX <= ((ship[1] + blockSize) + 2 )) && (positionY + (3 * blockSize) >= ship[0]) && (positionY <= ship[0] + blockSize)) ||
+        ((positionX + (3 * blockSize) >= (ship[1] - 2)) && (positionX + (3 * blockSize) <= (ship[1] + 2 )) && (positionY + (3 * blockSize) >= ship[0]) && (positionY <= ship[0] + blockSize)) ||
+		((positionY >= ((ship[0] + blockSize) - 2)) && (positionY <= ((ship[0] + blockSize) + 2 )) && (positionX + (3 * blockSize) >= ship[1]) && ((positionX) <= ship[1] + blockSize)) ||
+        ((positionY + (3 * blockSize) >= (ship[0] - 2)) && (positionY + (3 * blockSize) <= (ship[0]+ 2)) && (positionX + (3 * blockSize) >= ship[1]) && ((positionX) <= ship[1] + blockSize)) ){ 
 		
         console.log("collision occurred");
 		return true;
@@ -86,10 +90,32 @@ function update (){
         return;
     }
 
+    if (second == 5) {
+        clearInterval(myInterval)
+        myInterval = setInterval(update, 850 / frames)
+    }
+    else if (second == 10){
+        clearInterval(myInterval)
+        myInterval = setInterval(update, 700 / frames)
+    }
+    else if (second == 15){
+        clearInterval(myInterval)
+        myInterval = setInterval(update, 550 / frames)
+    }
+    else if (second == 20){
+        clearInterval(myInterval)
+        myInterval = setInterval(update, 450 / frames)
+    }
+    else if (second == 25){
+        clearInterval(myInterval)
+        myInterval = setInterval(update, 300 / frames)
+    }
+
     context.fillStyle = "blue";
     context.fillRect(0, 0, board.width, board.height);
-    context.fillStyle = "white";
-    context.fillRect(positionX, positionY, blockSize, blockSize);
+    // context.fillStyle = "white";
+    // context.fillRect(positionX, positionY, blockSize, blockSize);
+    context.drawImage(img, positionX, positionY, 3 * blockSize, 3 * blockSize);
 
     if (counter % 150 == 0){
         addShip();
@@ -104,7 +130,7 @@ function update (){
 		collision = checkCollision(ships[i]);
 		if (collision){
 			gameOver = true;
-            alert("Game Over");
+            alert("Game Over. You stayed afloat for " + second + " seconds!");
             timer = false;
 		}
 
@@ -119,9 +145,8 @@ function update (){
     speedX = speedX/1.005;
     speedY = speedY/1.005;
     
-
-    if ((positionY >= height * blockSize) || (positionX >= width * blockSize) || (positionY < 0) || (positionX < 0) ){
-        alert("Game Over");
+    if ((positionY + (3 * blockSize) >= height * blockSize) || (positionX + (3 * blockSize) >= width * blockSize) || (positionY <= 0) || (positionX <= 0) ){
+        alert("Game Over. You stayed afloat for " + second + " seconds!");
         gameOver = true;
         timer = false;
     }
@@ -156,30 +181,18 @@ function addShip (){
 function stopWatch() { 
     if (timer) { 
         count++; 
-  
+
         if (count == 100) { 
             second++; 
             count = 0; 
         } 
-  
-        if (second == 60) { 
-            minute++; 
-            second = 0; 
-        } 
 
-        let minString = minute; 
         let secString = second; 
-  
-        if (minute < 10) { 
-            minString = "0" + minString; 
-        } 
   
         if (second < 10) { 
             secString = "0" + secString; 
         } 
-  
 
-        document.getElementById('min').innerHTML = minString; 
         document.getElementById('sec').innerHTML = secString; 
 
         setTimeout(stopWatch, 10); 
