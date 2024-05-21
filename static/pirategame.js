@@ -21,7 +21,7 @@ let second = 0;
 let count = 0;
 
 const img = new Image();
-img.src = 'static/ship.jpg';
+img.src = 'static/pirate.png';
 
 const mineImg = new Image();
 mineImg.src = 'static/mine.png';
