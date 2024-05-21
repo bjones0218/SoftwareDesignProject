@@ -130,6 +130,9 @@ function update (){
 
     context.drawImage(img, positionX, positionY, 3 * blockSize, 3 * blockSize);
 
+    context.fillStyle = "black";
+    context.strokeRect(positionX, positionY, 3 * blockSize, 3 * blockSize);
+
     if (counter % 150 == 0){
         addShip();
     }
