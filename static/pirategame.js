@@ -23,6 +23,9 @@ let count = 0;
 const img = new Image();
 img.src = 'static/ship.jpg';
 
+const mineImg = new Image();
+mineImg.src = 'static/mine.png';
+
 window.onload = function () {
     // Set board height and width
     board = document.getElementById("board");
@@ -36,28 +39,39 @@ window.onload = function () {
 }
 
 function onStartClicked () {
-    console.log("Button clicked");
+
     clearInterval(myInterval);
     startButton = document.getElementById("restart-button");
+
     if (startButton.innerText == "Restart") {
+
         gameOver = true;
+
         startButton.innerText = "Start";
+
         counter = 0;
         ships = [];
+
         timer = false; 
         second = 0; 
         count = 0; 
+
         document.getElementById('sec').innerHTML = "00"; 
+
         positionX = (width*blockSize)/2;
         positionY = (height*blockSize)/2;
+
         speedX = 0;
         speedY = 0;
     }
     else {
         gameOver = false;
+
         startButton.innerText = "Restart";
+        
         timer = true;
         stopWatch();
+        
         myInterval = setInterval(update, 1000 / frames);
     }
 
@@ -113,8 +127,7 @@ function update (){
 
     context.fillStyle = "blue";
     context.fillRect(0, 0, board.width, board.height);
-    // context.fillStyle = "white";
-    // context.fillRect(positionX, positionY, blockSize, blockSize);
+
     context.drawImage(img, positionX, positionY, 3 * blockSize, 3 * blockSize);
 
     if (counter % 150 == 0){
@@ -137,6 +150,8 @@ function update (){
         ships[i][0] = ships[i][0] + 1;
         
         context.fillRect(ships[i][1], ships[i][0], blockSize, blockSize);
+        context.drawImage(mineImg, ships[i][1], ships[i][0],  blockSize,  blockSize);
+
     }
 
     positionY += speedY;
@@ -155,20 +170,15 @@ function update (){
 
 function changeDirection(e) {
     if (e.code == "ArrowUp") {
-        // If up arrow key pressed with this condition...
-        // snake will not move in the opposite direction
         speedY = speedY - 0.2;
     }
     else if (e.code == "ArrowDown") {
-        //If down arrow key pressed
         speedY = speedY + 0.2;
     }
     else if (e.code == "ArrowLeft") {
-        //If left arrow key pressed
         speedX = speedX - 0.2;
     }
     else if (e.code == "ArrowRight") {
-        //If Right arrow key pressed
         speedX = speedX + 0.2;
     }
 }
