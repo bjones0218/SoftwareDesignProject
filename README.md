@@ -14,8 +14,8 @@ MapLibre GL JS
 ChartsJS
 
 # Authors
-Blake Jones
-Henry Coyle
-Cameron Richardson
-Leon Liang
+Blake Jones,
+Henry Coyle,
+Cameron Richardson,
+Leon Liang,
 Jonathan Vilms
