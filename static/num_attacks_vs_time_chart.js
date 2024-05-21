@@ -81,6 +81,7 @@ async function create_chart(region) {
                               radius: 3.6,
                               hoverRadius:10,
                               responsive: true,
+                              maintainAspectRatio: false,
                               backgroundColor: gradient,
                               pointBackgroundColor: "#333333",
                               borderColor: "#fff",

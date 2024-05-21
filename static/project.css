@@ -27,6 +27,7 @@
 }
 
 body {
+    height: 100%;
     margin: 0;
     background-image: url('background3.webp');
     background-size: cover;
@@ -85,6 +86,26 @@ body {
     border-color: #888;
 }
 
+/* Makes the header a fixed size and the map take up the rest of the screen
+https://www.w3docs.com/snippets/html/how-to-make-a-div-fill-the-height-of-the-remaining-space.html */
+.box-flex {
+    display: flex;
+    flex-flow: column;
+    height: 100%;
+}
+
+.box-flex .row-head {
+    flex: 0 1 auto;
+}
+
+.box-flex #map {
+    flex: 1 1 auto;
+}
+
+.box-flex .chart-select-and-content-row {
+    flex: 1 1 auto;
+}
+
 select {
     width: 200px; /* Adjust width as needed */
     padding: 8px 12px;
@@ -102,6 +123,7 @@ select:hover, select:focus {
     border-color: #aaa; /* Slightly darker grey on hover/focus */
     background-color: rgba(255, 255, 255, 1); /* Less transparent on hover */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    
 }
 
 .charts {
@@ -112,5 +134,6 @@ select:hover, select:focus {
     margin: auto; /* Center the chart if necessary */
     display: block; /* Make sure the canvas behaves as a block for margin to work */
     width: 80%; /* Adjust based on your design needs */
-    height: auto; /* Maintain aspect ratio */
+    /* height: auto; /* Maintain aspect ratio */
+    flex: 1 1 auto; /* Fill the rest of the screen after the header */
 }
