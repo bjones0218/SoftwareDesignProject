@@ -1,3 +1,4 @@
+# This updates the country outlines with indicators.
 import json
 import psycopg2
 import datetime
