@@ -1,3 +1,4 @@
+// this file makes the button larger when hovering over it
 window.onscroll = function() {
     const headBar = document.getElementById('headBar');
     if (window.scrollY > 100) {
