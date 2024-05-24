@@ -1,3 +1,4 @@
+/*this file controls all of the ui placement and colors */
 #headBar {
     display: flex;
     align-items: center; /* Centers items vertically within the bar */
