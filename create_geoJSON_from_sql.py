@@ -1,3 +1,4 @@
+# This turns an sql database with pirate attacks into geoJSON format
 import json
 import psycopg2
 import datetime
