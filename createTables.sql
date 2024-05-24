@@ -1,3 +1,4 @@
+-- this creates tables for each dataset we chose from their csv files.
 DROP TABLE IF EXISTS country_codes;
 DROP TABLE IF EXISTS country_indicators;
 DROP TABLE IF EXISTS pirate_attacks;
