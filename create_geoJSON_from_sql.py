@@ -14,15 +14,15 @@ if connection is None:
     print("Connection failed")
 cursor = connection.cursor()
 
+# python dict which all of the data will be stored in
 data = {
     "type": "FeatureCollection",
     "features": []
 }
 
-# put all of the data in the GeoJSON, because we don't know what we need yet
+# get all of the data from the SQL, because we don't know what we need yet
 cursor.execute("SELECT date, time, longitude, latitude, attack_type, location_description, nearest_country, eez_country, shore_distance, shore_longitude, shore_latitude, attack_description, vessel_name, vessel_type, vessel_status, data_source FROM pirate_attacks")
 all_attacks = cursor.fetchall()
-print(all_attacks[0])
 for attack in all_attacks:
     longitude = attack[2]
     latitude = attack[3]
@@ -56,8 +56,6 @@ for attack in all_attacks:
                       data_source = attack[15])
     geoJSON_feature["properties"] = properties
     data["features"].append(geoJSON_feature)
-
-print(data["features"][0])
 
 # https://stackoverflow.com/questions/12309269/how-do-i-write-json-data-to-a-file
 with open("pirate_attacks.geojson", "w", encoding="utf-8") as file:
