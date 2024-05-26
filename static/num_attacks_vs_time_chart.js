@@ -1,3 +1,4 @@
+// this file inlcudes function that deal with charts
 const START_YEAR = 1993;
 const END_YEAR = 2020;
 var attacks_vs_time_chart;
