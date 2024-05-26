@@ -1,13 +1,6 @@
 // this file makes the button larger when hovering over it
-window.onscroll = function() {
-    const headBar = document.getElementById('headBar');
-    if (window.scrollY > 100) {
-        headBar.style.backgroundColor = '#222';
-    } else {
-        headBar.style.backgroundColor = '#333';
-    }
-};
 
+//this function adds hover effect
 function mouseEnterExplore(){
     exploreinheadbar = document.getElementById("exploreinheadbar");
     exploreinheadbar.style.backgroundColor = "#555";
@@ -17,6 +10,7 @@ function mouseEnterExplore(){
     bigexplore.style.transition = "all .2s ease-in"
 };
 
+//this function removes the hover effect when teh mouse leave the button
 function mouseOutExplore(){
     exploreinheadbar = document.getElementById("exploreinheadbar");
     exploreinheadbar.style.backgroundColor = "#000000";
