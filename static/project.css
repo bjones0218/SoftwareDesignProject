@@ -30,7 +30,7 @@
 body {
     height: 100%;
     margin: 0;
-    background-image: url('background3.webp');
+    background-image: url('background3.png');
     background-size: cover;
     background-attachment: fixed;
 }
