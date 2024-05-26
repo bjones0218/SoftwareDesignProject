@@ -1,4 +1,4 @@
-// this file makes the button larger when hovering over it
+// this file includes hover effects functionns
 
 //this function adds hover effect
 function mouseEnterExplore(){
