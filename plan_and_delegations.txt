@@ -5,16 +5,32 @@ a menu above the map, which switch views on the same map.
 
 TASKS:
 1. Creating the map. Using a Java Script library to display a map and be able to zoom and pan it.
-Blake, Leon
-2. Creating the UI for the home page and the map page. It must have a space where the map can be inserted.
-Cameron, Leon
+Blake
+2. Creating the general UI and navigation for the website
+Cameron, Leon, Johnathan
 3. Adding dots to the map, making the dots clickable to display extra information, automatically adding the dots to the map using the database.
 Blake, Henry
-4. Reach task: create supplemental information like bar plots, country indicators, etc.
-Johnathan
+4. Add a line chart for attacks vs time
+Henry, Johnathan
 5. Adding country data to the map. Making it so that you can click the countries to display indicators about them.
 Henry
-6. Fill in details and about us page. Add some info. to home.
+6. Refine the about us page and README
+Blake
+7. Added drop down list to generate new charts with new content
+Leon
+8. Add a pirate themed game to the website
+Blake
+9. Add a background with a correct compass to the website
+ChatGPT, Leon, Henry
+10. Convert SQL data to GeoJSON to be used by libraries
+Henry
+11. Create tests
+Cameron, Leon, Henry
+12. User readability and accessability
+Johnathan
+13. Commenting code
+Johnathan, Henry, Cameron, Leon, Blake
+14. Create and add logo to the site
 Blake
 
 Links:
