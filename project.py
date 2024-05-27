@@ -10,7 +10,7 @@ def home():
     
 @app.route('/map')
 def explore():
-    return render_template("explore.html")
+    return render_template("map.html")
 
 @app.route('/aboutus')
 def aboutus():
