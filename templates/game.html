@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport",
+		content="width=device-width, initial-scale=1.0">
+	<title>Pirate Game</title>
+	<link rel="stylesheet" href="/static/project.css">
+	<link rel="stylesheet" href="/static/game.css">
+	<script src="static/pirategame.js"></script>
+</head>
+
+<body>
+	<div id="headBar">
+		<a href="/" id="logoLink">
+			<img src="/static/logo2.svg" alt="Logo" id="logo" style="height: 50px;">
+		</a>
+		<div class="nav-links">
+			<a href="/explore">Explore</a>
+			<a href="/charts">Charts</a>
+			<a href="/aboutus">About Us</a>
+			<a href="/pirategame" class="clickedHeadbar">Pirate Game!</a>
+		</div>   
+	</div>
+
+	<div class="timer">
+		<span class="digit" id="sec">00</span> 
+		<span class="txt">Sec</span> 
+	</div>
+	
+	<canvas id="board" style="margin: auto;"></canvas>
+
+	<button id="restart-button" onclick="onStartClicked() "type="button">Restart</button>
+</body>
+
+</html>
