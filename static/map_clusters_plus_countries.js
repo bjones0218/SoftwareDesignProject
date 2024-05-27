@@ -1,4 +1,8 @@
+// this file displays the map and adds points and polygons to it to represent pirate attacks and countries
+// it uses the maplibre library: https://maplibre.org/maplibre-gl-js/docs/
+// code adapted from https://maplibre.org/maplibre-gl-js/docs/examples/cluster/
 
+// create a map using the maplibre library and place it in the map div
 const map = new maplibregl.Map({
     container: 'map',
     style: 'https://api.maptiler.com/maps/streets/style.json?key=D7IRYVVxzUM00mJgVi72',
@@ -12,7 +16,8 @@ map.on('load', () => {
     // Add a new source from our GeoJSON data and
     // set the 'cluster' option to true. GL-JS will
     // add the point_count property to your source data.
-    console.log("Showing map of clusters and countries");
+    
+    // source data from GeoJSON
     map.addSource('pirate_attacks', {type: 'geojson',
                                      // Point to GeoJSON data
                                      data: 'static/pirate_attacks.geojson',
@@ -24,6 +29,8 @@ map.on('load', () => {
     map.addSource('countries', {type: "geojson",
                                 data: "static/country_outlines_with_indicators.geojson"})
 
+    // defining the layers that are shown on the map:
+    // big circles for point clusters
     map.addLayer({id: 'clusters',
                   type: 'circle',
                   source: 'pirate_attacks',
@@ -36,6 +43,7 @@ map.on('load', () => {
                           'circle-color': ['step', ['get', 'point_count'], '#51bbd6', 100, '#f1f075', 750, '#f28cb1'],
                           'circle-radius': ['step', ['get', 'point_count'], 20, 100, 30, 750, 40]}});
 
+    // text on top of each cluster to display how many attacks are included in it
     map.addLayer({id: 'cluster-count',
                   type: 'symbol',
                   source: 'pirate_attacks',
@@ -44,6 +52,7 @@ map.on('load', () => {
                            'text-font': ['DIN Offc Pro Medium', 'Arial Unicode MS Bold'],
                            'text-size': 12}});
 
+    // points representing individual attacks
     map.addLayer({id: 'unclustered-point',
                   type: 'circle',
                   source: 'pirate_attacks',
@@ -80,17 +89,10 @@ map.on('load', () => {
     // description HTML from its properties.
     map.on('click', 'unclustered-point', (e) => {
         const coordinates = e.features[0].geometry.coordinates.slice();
-        let attack_description;
-        if (e.features[0].properties.attack_description =="NA")
-        {
-            console.log("No desc");
-            attack_description = "No Description Provided";
-        }
-        else
-        {
-            console.log("Decription present");
-            attack_description = e.features[0].properties.attack_description;	
-        }
+        var date_iso = e.features[0].properties.date;
+        var date_string = new Date(date_iso).toDateString();
+        // dispay either the attack description, if it is available, or the date
+        var details_popup = e.features[0].properties.attack_description == "NA" ? date_string : e.features[0].properties.attack_description;
         
         // Ensure that if the map is zoomed out such that
         // multiple copies of the feature are visible, the
@@ -101,11 +103,12 @@ map.on('load', () => {
 
         new maplibregl.Popup()
             .setLngLat(coordinates)
-            .setHTML(`attack_description: ${attack_description}`)
+            .setHTML(`${details_popup}`)
             .addTo(map);
 
     });
 
+    // give visual indication that the points can be clicked on
     map.on('mouseenter', 'clusters', () => {
         map.getCanvas().style.cursor = 'pointer';
     });
@@ -114,8 +117,16 @@ map.on('load', () => {
         map.getCanvas().style.cursor = '';
     });
 
-    // https://maplibre.org/maplibre-gl-js/docs/examples/polygon-popup-on-click/
-    // When a click event occurs on a feature in the states layer, open a popup at the
+    map.on('mouseenter', 'unclustered-point', () => {
+        map.getCanvas().style.cursor = 'pointer';
+    });
+
+    map.on('mouseleave', 'unclustered-point', () => {
+        map.getCanvas().style.cursor = '';
+    });
+
+    // adapted from https://maplibre.org/maplibre-gl-js/docs/examples/polygon-popup-on-click/
+    // When a click event occurs on a feature in the countries layer, open a popup at the
     // location of the click, with description HTML from its properties.
     map.on('click', 'countries', (e) => {
         var indicators = JSON.parse(e.features[0].properties.indicators);
@@ -131,7 +142,7 @@ map.on('load', () => {
             .addTo(map);
     });
 
-    // Change the cursor to a pointer when the mouse is over the states layer.
+    // Change the cursor to a pointer when the mouse is over the countries layer.
     map.on('mouseenter', 'countries', () => {
         map.getCanvas().style.cursor = 'pointer';
     });

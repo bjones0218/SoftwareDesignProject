@@ -1,3 +1,5 @@
+#This python file runs test queries in order to make sure our database is as expected.
+
 import psycopg2
 
 connection = psycopg2.connect(

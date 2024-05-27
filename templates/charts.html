@@ -1,3 +1,6 @@
+<!-- This is the html file for the Charts page -->
+<!-- It creates a dropdown list by region and displays charts based on the region optioons -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,42 +8,50 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel='stylesheet' href='https://unpkg.com/maplibre-gl@4.2.0/dist/maplibre-gl.css' />
     <link rel="stylesheet" href="/static/project.css">
+    <!--<script src='https://unpkg.com/maplibre-gl@4.2.0/dist/maplibre-gl.js'></script>-->
     <script src="/static/project.js"></script>
+    <style>
+        body { margin: 0; padding: 0; }
+        html, body, #map { height: 100%; }
+    </style>
 </head>
 
 <body onload='create_chart("World")'>
-    <div id="headBar">
-        <a href="/" id="logoLink">
-            <img src="/static/logo2.svg" alt="Logo" id="logo" style="height: 50px;">
-        </a>
-        <div class="nav-links">
-            <a href="/explore">Explore</a>
-            <a class="clickedHeadbar" href="/charts">Charts</a>
-            <a href="/aboutus">About Us</a>
-            <a href="/pirategame">Pirate Game!</a>
+
+    <div class="box-flex">
+        <div class="row-head">
+            <div id="headBar">
+                <a href="/" id="logoLink">
+                    <img src="/static/logo2.svg" alt="Logo" id="logo" style="height: 50px;">
+                </a>
+                <div class="nav-links">
+                    <a href="/explore">Explore</a>
+                    <a class="clickedHeadbar" href="/charts">Charts</a>
+                    <a href="/aboutus">About Us</a>
+                    <a href="/pirategame">Pirate Game!</a>
+                </div>
+            </div>
+            <div class="select" id="dropdownlist">
+                <select id="chartSelector" onchange="updateChart()">
+                    <option value="World">World</option>
+                    <option value="East Asia & Pacific">East Asia & Pacific</option>
+                    <option value="Europe & Central Asia">Europe & Central Asia</option>
+                    <option value="Latin America & Caribbean">Latin America & Caribbean</option>
+                    <option value="Middle East & North Africa">Middle East & North Africa</option>
+                    <option value="North America">North America</option>
+                    <option value="South Asia">South Asia</option>
+                    <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
+                </select>
+            </div>
         </div>
+        <!--https://www.chartjs.org/docs/latest/getting-started/-->
+        <div class="charts"><canvas id="attacks_vs_time_chart"></canvas></div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="static/num_attacks_vs_time_chart.js"></script>
+        
     </div>
-
-    <div class="select">
-        <select id="chartSelector" onchange="updateChart()">
-            <option value="World">World</option>
-            <option value="East Asia & Pacific">East Asia & Pacific</option>
-            <option value="Europe & Central Asia">Europe & Central Asia</option>
-            <option value="Latin America & Caribbean">Latin America & Caribbean</option>
-            <option value="Middle East & North Africa">Middle East & North Africa</option>
-            <option value="North America">North America</option>
-            <option value="South Asia">South Asia</option>
-            <option value="Sub-Saharan Africa">Sub-Saharan Africa</option>
-        </select>
-    </div>
-
-    <!--https://www.chartjs.org/docs/latest/getting-started/-->
-    <div class="charts"><canvas id="attacks_vs_time_chart"></canvas></div>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="static/num_attacks_vs_time_chart.js"></script>
-    
-
 
 </body>
 

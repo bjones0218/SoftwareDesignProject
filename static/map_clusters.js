@@ -1,4 +1,5 @@
-
+// This adds clusters of pirate attacks with the number of attacks based on how zoomed in you are and their proximity with one another.
+// allows you to click to zoom as well until you click a lone attack, then shows details about it. (attack description)
 const map = new maplibregl.Map({
 
     container: 'map',

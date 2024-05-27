@@ -1,3 +1,4 @@
+# this is the code that gets run in order to start the website up. It renders each page's html.
 from flask import Flask
 from flask import render_template
 
