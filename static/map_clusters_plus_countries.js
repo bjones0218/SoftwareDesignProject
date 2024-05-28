@@ -58,8 +58,8 @@ map.on('load', () => {
                   source: 'pirate_attacks',
                   filter: ['!', ['has', 'point_count']],
                   paint: {'circle-color': '#11b4da',
-                          'circle-radius': 4,
-                          'circle-stroke-width': 1,
+                          'circle-radius': 10,
+                          'circle-stroke-width': 2,
                           'circle-stroke-color': '#fff'}});
     
     // country outlines
