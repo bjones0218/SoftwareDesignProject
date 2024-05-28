@@ -8,7 +8,6 @@ function mouseEnterExplore(){
     bigexplore.style.transition = "all .2s ease-in"
     mapbutton = document.getElementById("map");
     mapbutton.style.backgroundColor = "#555";
-    mapbutton.style.color = "white";
 };
 
 //this function removes the hover effect when the mouse leave the button
@@ -19,5 +18,4 @@ function mouseOutExplore(){
     bigexplore.style.transition = "all .2s ease-out"
     mapbutton = document.getElementById("map");
     mapbutton.style.backgroundColor = "#rgb(78, 74, 74)";
-    mapbutton.style.color = "white";
 };
