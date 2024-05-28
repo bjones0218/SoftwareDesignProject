@@ -17,5 +17,5 @@ function mouseOutExplore(){
     bigexplore.style.transform = "scale(1)";
     bigexplore.style.transition = "all .2s ease-out"
     mapbutton = document.getElementById("map");
-    mapbutton.style.backgroundColor = "#rgb(78, 74, 74)";
+    mapbutton.style.backgroundColor = "#000000";
 };
