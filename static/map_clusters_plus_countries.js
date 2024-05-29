@@ -93,6 +93,7 @@ map.on('load', () => {
         var date_string = new Date(date_iso).toDateString();
         // dispay either the attack description, if it is available, or the date
         var details_popup = e.features[0].properties.attack_description == "NA" ? date_string : e.features[0].properties.attack_description;
+        var font_size = e.features[0].properties.attack_description == "NA" ? 16 : 12;
         
         // Ensure that if the map is zoomed out such that
         // multiple copies of the feature are visible, the
@@ -103,7 +104,7 @@ map.on('load', () => {
 
         new maplibregl.Popup()
             .setLngLat(coordinates)
-            .setHTML(`${details_popup}`)
+            .setHTML(`<p style="font-size: ${font_size}px;">${details_popup}</p>`)
             .addTo(map);
 
     });
